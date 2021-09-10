@@ -34,17 +34,13 @@
                             ?>
                         </div>
                     </div>
-                    <div data-v-1a96ae98="" class="col-md-3 col-sm-12 pt-4 colors">
-                        <label data-v-1a96ae98="" class="alt-font"><b><div style="cursor: pointer;" onclick="genScreenshot()";return false;">Download PDF</div></b> </label>
+                    <div data-v-1a96ae98="" class="col-md-2 col-sm-12 pt-4 sidebar">
+                        <?php include('./include/form.php') ?>
                     </div>
                     <div data-v-1a96ae98="" class="col-md-3 col-sm-12 pt-4 colors">
                         <label data-v-1a96ae98="" class="alt-font"><b>Colors <span class="color-selected"></span></b> </label>
                         <div><br></div>
                         <?php include('./include/color.php') ?>
-                    </div>
-                    <!---->
-                    <div data-v-1a96ae98="" class="col-md-2 col-sm-12 pt-4 sidebar">
-                        <?php include('./include/form.php') ?>
                     </div>
                 </div>
                 <!---->

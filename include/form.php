@@ -1,47 +1,23 @@
 <div>
     <div class="row">
-        <div class="col-12">
-            <label class="form-label"><b>Width</b></label>
-        </div>
         <div class="col-md-3 col-4">
+            <label class="form-label"><b>Width</b> <small>(Cm)</small></label>
             <div class="mb-3">
-                <label class="form-label">Feet</label>
-                <input type="number" class="form-control handleWidth" value="12" min="0" id="FeetWidth">
+                <input type="number" class="form-control" value="366" min="0" id="CMWidth" style="font-size: 13px;">
             </div>
         </div>
         <div class="col-md-3 col-4">
+            <label class="form-label"><b>Height</b> <small>(Cm)</small></label>
             <div class="mb-3">
-                <label class="form-label">Inches</label>
-                <input type="number" class="form-control" value="0" id="InchesWidth">
+                <input type="number" class="form-control" value="244" min="0" id="CMHeight" style="font-size: 13px;">
             </div>
         </div>
         <div class="col-md-3 col-4">
+            <label class="form-label">&nbsp;</label>
             <div class="mb-3">
-                <label class="form-label">Cm</label>
-                <input type="number" class="form-control" value="366" min="0" id="CMWidth">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <label class="form-label"><b>Height</b></label>
-        </div>
-        <div class="col-md-3 col-4">
-            <div class="mb-3">
-                <label class="form-label">Feet</label>
-                <input type="number" class="form-control handleHeight" value="8" min="0" id="FeetHeight">
-            </div>
-        </div>
-        <div class="col-md-3 col-4">
-            <div class="mb-3">
-                <label class="form-label">Inches</label>
-                <input type="number" class="form-control" value="0" min="0" id="InchesHeight">
-            </div>
-        </div>
-        <div class="col-md-3 col-4">
-            <div class="mb-3">
-                <label class="form-label">Cm</label>
-                <input type="number" class="form-control" value="244" min="0" id="CMHeight">
+                <button class="btn btn-warning" onclick="genScreenshot();return false;" style="font-size: 13px;">
+                    Download PDF
+                </button>
             </div>
         </div>
     </div>
