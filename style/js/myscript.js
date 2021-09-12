@@ -258,5 +258,28 @@ $(document).ready(function(){
 	}
 
 	/**/
+	$(document).on('click', '#handle-submit', function(){
+		convert_img();
+	})
+	function convert_img(){
+		var svg = document.querySelector( "svg#mainsvg" );
+		var svgData = new XMLSerializer().serializeToString( svg );
 
+		var canvas = document.createElement( "canvas" );
+		var svgSize = svg.getBoundingClientRect();
+		canvas.width = svgSize.width;
+		canvas.height = svgSize.height;
+		var ctx = canvas.getContext( "2d" );
+
+		var img = document.createElement( "img" );
+		img.setAttribute( "src", "data:image/svg+xml;base64," + btoa( svgData ) );
+
+		img.onload = function() {
+			ctx.drawImage( img, 0, 0 );
+			// console.log( canvas.toDataURL( "image/png" ) );
+			let result_image = canvas.toDataURL( "image/png" );
+			$('input[name=baseImage').val(result_image);
+			$('#submit-form').submit();
+		};
+	}
 })

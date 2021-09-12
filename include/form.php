@@ -15,7 +15,7 @@
         <div class="col-md-3 col-4">
             <label class="form-label">&nbsp;</label>
             <div class="mb-3">
-                <button class="btn btn-warning" onclick="genScreenshot();return false;" style="font-size: 13px;">
+                <button class="btn btn-warning" id="handle-submit" style="font-size: 13px;">
                     Download PDF
                 </button>
             </div>
@@ -36,6 +36,9 @@
         </div>
     </div>
 </div>
+<form id="submit-form" action="/process.php" method="POST">
+    <input type="hidden" name="baseImage" value="">
+</form>
 <button class="btn-secondary btn-clear tool-mobile" onclick="$('.handleClear').trigger('click');">
     Clear
 </button>
