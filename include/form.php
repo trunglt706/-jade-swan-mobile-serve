@@ -14,9 +14,9 @@
         </div>
         <div class="col-md-3 col-4">
             <label class="form-label">&nbsp;</label>
-            <div class="mb-3">
-                <button class="btn btn-warning" id="handle-submit" style="font-size: 13px;">
-                    Download PDF
+            <div class="mb-3" style="text-align: right">
+                <button class="btn btn-danger tool-mobile btn-pdf" id="handle-submit" style="font-size: 13px;">
+                    PDF
                 </button>
             </div>
         </div>
@@ -38,6 +38,9 @@
 </div>
 <form id="submit-form" action="/process.php" method="POST">
     <input type="hidden" name="baseImage" value="">
+    <input type="hidden" name="baseName" value="{{ $pattern->title }}">
+    <input type="hidden" name="baseWidth" value="366">
+    <input type="hidden" name="baseHeight" value="244">
 </form>
 <button class="btn-secondary btn-clear tool-mobile" onclick="$('.handleClear').trigger('click');">
     Clear
