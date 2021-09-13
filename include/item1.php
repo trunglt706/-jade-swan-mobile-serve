@@ -1,11 +1,11 @@
-<svg data-v-55219509="" data-v-1a96ae98="" preserveAspectRatio="xMinYMin meet" viewBox="0 0 144 96" class="design-svg"  
-   id="mainsvg"
+<svg data-v-55219509="" data-v-1a96ae98="" preserveAspectRatio="xMinYMin meet" viewBox="0 0 144 96" class="design-svg"  id="mainsvg"
    style='
       display: block;
      -webkit-user-select: none;
      -moz-user-select: none;
      -ms-user-select: none;
-     user-select: none;'>
+     user-select: none;
+     background: white;'>
    <defs data-v-55219509="">
       <clipPath data-v-55219509="" id="8-clip-path">
          <rect data-v-55219509="" width="144" height="96"></rect>
