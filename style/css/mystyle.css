@@ -78,7 +78,7 @@
 .sidebar[data-v-1a96ae98] {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 170px;
-  flex: 0 0 90%;
+  flex: 0 0 100%;
 }
 
 label[data-v-1a96ae98] {
@@ -359,12 +359,16 @@ label[data-v-1a96ae98] {
   text-align: center;
   right: 20px;
   border: none;
+  z-index: 2;
 }
 
 .btn-clear {
-  bottom: 80px;
+  bottom: calc(100% / 2 + 55px);
 }
 
 .btn-fill {
-  bottom: 25px;
+  bottom: calc(100% / 2);
+}
+.btn-pdf {
+  bottom: calc(100% / 2 - 55px);
 }
