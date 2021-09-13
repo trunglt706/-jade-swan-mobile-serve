@@ -1,4 +1,5 @@
-<svg data-v-55219509="" data-v-1a96ae98="" preserveAspectRatio="xMinYMin meet" viewBox="0 0 144 96" class="design-svg"  id="mainsvg"
+<svg data-v-55219509="" data-v-1a96ae98="" preserveAspectRatio="xMinYMin meet" viewBox="0 0 144 96" class="design-svg"  
+   id="mainsvg"
    style='
       display: block;
      -webkit-user-select: none;
