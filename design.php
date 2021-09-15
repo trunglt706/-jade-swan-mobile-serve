@@ -11,9 +11,9 @@
     <link rel="stylesheet" type="text/css" href="style/css/mystyle.css">
     <style type="text/css">
         html2canvas {
-     width: 100px !important;
-     height: 200px !important;
-}
+            width: 100px !important;
+            height: 200px !important;
+        }
     </style>
 </head>
 
@@ -29,15 +29,15 @@
                                 <label class="alt-font"><b>Mẫu pattern</b></label>
                             </div>
                             <?php
-                                $filename = './include/item'. $_GET['id'] .'.php';
-                                include($filename);
+                            $filename = './include/item' . $_GET['id'] . '.php';
+                            include($filename);
                             ?>
                         </div>
                     </div>
                     <div data-v-1a96ae98="" class="col-md-2 col-sm-12 pt-4 sidebar">
                         <?php include('./include/form.php') ?>
                     </div>
-                    <div data-v-1a96ae98="" class="col-md-3 col-sm-12 pt-4 colors">
+                    <div data-v-1a96ae98="" class="col-md-3 col-sm-12 colors">
                         <label data-v-1a96ae98="" class="alt-font"><b>Colors <span class="color-selected"></span></b> </label>
                         <div><br></div>
                         <?php include('./include/color.php') ?>
