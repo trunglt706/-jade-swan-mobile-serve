@@ -45,3 +45,42 @@
 <button class="btn-success btn-fill tool-mobile" onclick="$('.handleFill').trigger('click');">
     Fill
 </button>
+
+<div class="setting-element hide">
+    <div class="row">
+        <div class="col-md-3 col-6">
+            <label class="form-label"><b>Chiều ngang khối</b> <small>(Cm)</small></label>
+            <div class="mb-3">
+                <input type="number" class="form-control" value="0" min="0" id="width-element" style="font-size: 13px;">
+            </div>     
+        </div>
+        <div class="col-md-3 col-6">
+            <label class="form-label"><b>Chiều cao khối</b> <small>(Cm)</small></label>
+            <div class="mb-3">
+                <input type="number" class="form-control" value="0" min="0" id="height-element" style="font-size: 13px;">
+            </div>     
+        </div>
+        <div class="col-md-3 col-6">
+            <label class="form-label"><b>Vị trí khối</b> <small>(ngang)</small></label>
+            <div class="mb-3">
+                <input type="number" class="form-control" value="0" min="0" id="position-x-element" style="font-size: 13px;">
+            </div>     
+        </div>
+        <div class="col-md-3 col-6">
+            <label class="form-label"><b>Vị trí khối</b> <small>(dọc)</small></label>
+            <div class="mb-3">
+                <input type="number" class="form-control" value="0" min="0" id="position-y-element" style="font-size: 13px;">
+            </div>     
+        </div>
+    </div>
+</div>
+
+<div class="list-btn">
+    <button class="btn btn-secondary" id="add-doors">Cửa đi</button>
+    <button class="btn btn-secondary" id="add-window">Cửa sổ</button>
+    <button class="btn btn-secondary" id="add-power-socket">Ổ cắm điện</button>
+    <button class="btn btn-secondary" id="add-picture-frames">Khung tranh</button>
+    <button class="btn btn-danger" id="delete">Xóa</button>
+</div>
+<br>
+

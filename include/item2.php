@@ -3032,4 +3032,27 @@
         stroke-width: 0.3;
         pointer-events: none;"></rect>
    </g>
+   <rect x="5" y="10" width="40" height="78" style="fill:#8bc34a;stroke: #000;stroke-width: 0.2;" class="group-1 group-1-item-1 hide" data-id='1'></rect>
+   <rect x="10" y="10" width="40" height="78" style="fill:#8bc34a;stroke: #000;stroke-width: 0.2;" class="group-1 group-1-item-2 hide" data-id='2'></rect>
+   <rect x="15" y="10" width="40" height="78" style="fill:#8bc34a;stroke: #000;stroke-width: 0.2;" class="group-1 group-1-item-3 hide" data-id='3'></rect>
+   <rect x="20" y="10" width="40" height="78" style="fill:#8bc34a;stroke: #000;stroke-width: 0.2;" class="group-1 group-1-item-4 hide" data-id='4'></rect>
+   <rect x="25" y="10" width="40" height="78" style="fill:#8bc34a;stroke: #000;stroke-width: 0.2;" class="group-1 group-1-item-5 hide" data-id='5'></rect>
+
+   <rect x="5" y="10" width="20" height="40" style="fill:#bb3a31;stroke: #000;stroke-width: 0.2;" class="group-2 group-2-item-1 hide" data-id='1'></rect>
+   <rect x="10" y="10" width="20" height="40" style="fill:#bb3a31;stroke: #000;stroke-width: 0.2;" class="group-2 group-2-item-2 hide" data-id='2'></rect>
+   <rect x="15" y="10" width="20" height="40" style="fill:#bb3a31;stroke: #000;stroke-width: 0.2;" class="group-2 group-2-item-3 hide" data-id='3'></rect>
+   <rect x="20" y="10" width="20" height="40" style="fill:#bb3a31;stroke: #000;stroke-width: 0.2;" class="group-2 group-2-item-4 hide" data-id='4'></rect>
+   <rect x="25" y="10" width="20" height="40" style="fill:#bb3a31;stroke: #000;stroke-width: 0.2;" class="group-2 group-2-item-5 hide" data-id='5'></rect>
+
+   <rect x="5" y="10" width="20" height="20" style="fill:#6a635d;stroke: #000;stroke-width: 0.2;" class="group-4 group-4-item-1 hide" data-id='1'></rect>
+   <rect x="10" y="10" width="20" height="20" style="fill:#6a635d;stroke: #000;stroke-width: 0.2;" class="group-4 group-4-item-2 hide" data-id='2'></rect>
+   <rect x="15" y="10" width="20" height="20" style="fill:#6a635d;stroke: #000;stroke-width: 0.2;" class="group-4 group-4-item-3 hide" data-id='3'></rect>
+   <rect x="20" y="10" width="20" height="20" style="fill:#6a635d;stroke: #000;stroke-width: 0.2;" class="group-4 group-4-item-4 hide" data-id='4'></rect>
+   <rect x="25" y="10" width="20" height="20" style="fill:#6a635d;stroke: #000;stroke-width: 0.2;" class="group-4 group-4-item-5 hide" data-id='5'></rect>
+
+   <rect x="5" y="10" width="2" height="4" style="fill:#ffb400;stroke: #000;stroke-width: 0.2;" class="group-3 group-3-item-1 hide" data-id='1'></rect>
+   <rect x="10" y="10" width="2" height="4" style="fill:#ffb400;stroke: #000;stroke-width: 0.2;" class="group-3 group-3-item-2 hide" data-id='2'></rect>
+   <rect x="15" y="10" width="2" height="4" style="fill:#ffb400;stroke: #000;stroke-width: 0.2;" class="group-3 group-3-item-3 hide" data-id='3'></rect>
+   <rect x="20" y="10" width="2" height="4" style="fill:#ffb400;stroke: #000;stroke-width: 0.2;" class="group-3 group-3-item-4 hide" data-id='4'></rect>
+   <rect x="25" y="10" width="2" height="4" style="fill:#ffb400;stroke: #000;stroke-width: 0.2;" class="group-3 group-3-item-5 hide" data-id='5'></rect>
 </svg>

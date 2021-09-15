@@ -359,3 +359,276 @@ $(document).ready(function () {
     };
   }
 });
+
+/*PATTERN*/
+let x;
+let y;
+let width;
+let height;
+let id;
+let group;
+
+$(document).on('click', '#add-doors', function(){
+  if($('.group-1-item-1').hasClass('hide')){
+    $('.group-1-item-1').removeClass('hide');
+    $('.group-1-item-1').show();
+    return false;
+  }
+  if($('.group-1-item-2').hasClass('hide')){
+    $('.group-1-item-2').removeClass('hide');
+    $('.group-1-item-2').show();
+    return false;
+  }
+  if($('.group-1-item-3').hasClass('hide')){
+    $('.group-1-item-3').removeClass('hide');
+    $('.group-1-item-3').show();
+    return false;
+  }
+  if($('.group-1-item-4').hasClass('hide')){
+    $('.group-1-item-4').removeClass('hide');
+    $('.group-1-item-4').show();
+    return false;
+  }
+  if($('.group-1-item-5').hasClass('hide')){
+    $('.group-1-item-5').removeClass('hide');
+    $('.group-1-item-5').show();
+    return false;
+  }
+  alert('Số lượng tối đa 5');
+  return false;
+})
+
+$(document).on('click', '#add-window', function(){
+  if($('.group-2-item-1').hasClass('hide')){
+    $('.group-2-item-1').removeClass('hide');
+    $('.group-2-item-1').show();
+    return false;
+  }
+  if($('.group-2-item-2').hasClass('hide')){
+    $('.group-2-item-2').removeClass('hide');
+    $('.group-2-item-2').show();
+    return false;
+  }
+  if($('.group-2-item-3').hasClass('hide')){
+    $('.group-2-item-3').removeClass('hide');
+    $('.group-2-item-3').show();
+    return false;
+  }
+  if($('.group-2-item-4').hasClass('hide')){
+    $('.group-2-item-4').removeClass('hide');
+    $('.group-2-item-4').show();
+    return false;
+  }
+  if($('.group-2-item-5').hasClass('hide')){
+    $('.group-2-item-5').removeClass('hide');
+    $('.group-2-item-5').show();
+    return false;
+  }
+  alert('Số lượng tối đa 5');
+  return false;
+})
+
+$(document).on('click', '#add-power-socket', function(){
+  if($('.group-3-item-1').hasClass('hide')){
+    $('.group-3-item-1').removeClass('hide');
+    $('.group-3-item-1').show();
+    return false;
+  }
+  if($('.group-3-item-2').hasClass('hide')){
+    $('.group-3-item-2').removeClass('hide');
+    $('.group-3-item-2').show();
+    return false;
+  }
+  if($('.group-3-item-3').hasClass('hide')){
+    $('.group-3-item-3').removeClass('hide');
+    $('.group-3-item-3').show();
+    return false;
+  }
+  if($('.group-3-item-4').hasClass('hide')){
+    $('.group-3-item-4').removeClass('hide');
+    $('.group-3-item-4').show();
+    return false;
+  }
+  if($('.group-3-item-5').hasClass('hide')){
+    $('.group-3-item-5').removeClass('hide');
+    $('.group-3-item-5').show();
+    return false;
+  }
+  alert('Số lượng tối đa 5');
+  return false;
+})
+
+$(document).on('click', '#add-picture-frames', function(){
+  if($('.group-4-item-1').hasClass('hide')){
+    $('.group-4-item-1').removeClass('hide');
+    $('.group-4-item-1').show();
+    return false;
+  }
+  if($('.group-4-item-2').hasClass('hide')){
+    $('.group-4-item-2').removeClass('hide');
+    $('.group-4-item-2').show();
+    return false;
+  }
+  if($('.group-4-item-3').hasClass('hide')){
+    $('.group-4-item-3').removeClass('hide');
+    $('.group-4-item-3').show();
+    return false;
+  }
+  if($('.group-4-item-4').hasClass('hide')){
+    $('.group-4-item-4').removeClass('hide');
+    $('.group-4-item-4').show();
+    return false;
+  }
+  if($('.group-4-item-5').hasClass('hide')){
+    $('.group-4-item-5').removeClass('hide');
+    $('.group-4-item-5').show();
+    return false;
+  }
+  alert('Số lượng tối đa 5');
+  return false;
+})
+
+$(document).on('click', '#delete', function(){
+  let item_x, item_y, item_width, item_height;
+  if(group == 1){
+    item_x = 5;
+    item_y = 10;
+    item_width = 40;
+    item_height = 78;
+  }
+  if(group == 2){
+    item_x = 5;
+    item_y = 10;
+    item_width = 20;
+    item_height = 48;
+  }
+  if(group == 3){
+    item_x = 5;
+    item_y = 10;
+    item_width = 2;
+    item_height = 4;
+  }
+  if(group == 4){
+    item_x = 5;
+    item_y = 10;
+    item_width = 20;
+    item_height = 20;
+  }
+  $('.group-'+group+'-item-'+id).addClass('hide');
+  $('.group-'+group+'-item-'+id).hide();
+  $('.group-'+group+'-item-'+id).attr('x', item_x);
+  $('.group-'+group+'-item-'+id).attr('y', item_y);
+  $('.group-'+group+'-item-'+id).attr('width', item_width);
+  $('.group-'+group+'-item-'+id).attr('height', item_height);
+  return false;
+
+})
+
+$(document).on('click','.group-1', function(){
+  group = 1;
+  $('.group-1').css('stroke','#000');
+  $(this).css('stroke','#dc3545');
+  x = $(this).attr('x') * 2.54;
+  y = $(this).attr('y') * 2.54;
+  width = $(this).attr('width') * 2.54;
+  height = $(this).attr('height') * 2.54;
+
+  id = $(this).data('id');
+  $('.setting-element').removeClass('hide');
+  $('#width-element').val(Math.round(width));
+  $('#height-element').val(Math.round(height));
+  $('#position-x-element').val(Math.round(x));
+  $('#position-y-element').val(Math.round(y));
+})
+
+$(document).on('click','.group-2', function(){
+  group = 2;
+  $('.group-2').css('stroke','#000');
+  $(this).css('stroke','#dc3545');
+  x = $(this).attr('x') * 2.54;
+  y = $(this).attr('y') * 2.54;
+  width = $(this).attr('width') * 2.54;
+  height = $(this).attr('height') * 2.54;
+
+  id = $(this).data('id');
+  $('.setting-element').removeClass('hide');
+  $('#width-element').val(Math.round(width));
+  $('#height-element').val(Math.round(height));
+  $('#position-x-element').val(Math.round(x));
+  $('#position-y-element').val(Math.round(y));
+})
+
+$(document).on('click','.group-3', function(){
+  group = 3;
+  $('.group-3').css('stroke','#000');
+  $(this).css('stroke','#dc3545');
+  x = $(this).attr('x') * 2.54;
+  y = $(this).attr('y') * 2.54;
+  width = $(this).attr('width') * 2.54;
+  height = $(this).attr('height') * 2.54;
+
+  id = $(this).data('id');
+  $('.setting-element').removeClass('hide');
+  $('#width-element').val(Math.round(width));
+  $('#height-element').val(Math.round(height));
+  $('#position-x-element').val(Math.round(x));
+  $('#position-y-element').val(Math.round(y));
+})
+
+$(document).on('click','.group-4', function(){
+  group = 4;
+  $('.group-4').css('stroke','#000');
+  $(this).css('stroke','#dc3545');
+  x = $(this).attr('x') * 2.54;
+  y = $(this).attr('y') * 2.54;
+  width = $(this).attr('width') * 2.54;
+  height = $(this).attr('height') * 2.54;
+
+  id = $(this).data('id');
+  $('.setting-element').removeClass('hide');
+  $('#width-element').val(Math.round(width));
+  $('#height-element').val(Math.round(height));
+  $('#position-x-element').val(Math.round(x));
+  $('#position-y-element').val(Math.round(y));
+})
+
+
+$("#width-element").keyup(function () {
+    handleWidthElement($(this).val());
+});
+$("#width-element").on("change", function () {
+    handleWidthElement($(this).val());
+});
+function handleWidthElement(value){
+  $('.group-'+group+'-item-'+id).attr('width', Math.round(value / 2.54) )
+}
+
+$("#height-element").keyup(function () {
+    handleHeightElement($(this).val());
+});
+$("#height-element").on("change", function () {
+    handleHeightElement($(this).val());
+});
+function handleHeightElement(value){
+  $('.group-'+group+'-item-'+id).attr('height', Math.round(value / 2.54) )
+}
+
+$("#position-x-element").keyup(function () {
+    handlePositionXElement($(this).val());
+});
+$("#position-x-element").on("change", function () {
+    handlePositionXElement($(this).val());
+});
+function handlePositionXElement(value){
+  $('.group-'+group+'-item-'+id).attr('x', Math.round(value / 2.54) )
+}
+
+$("#position-y-element").keyup(function () {
+    handlePositionYElement($(this).val());
+});
+$("#position-y-element").on("change", function () {
+    handlePositionYElement($(this).val());
+});
+function handlePositionYElement(value){
+  $('.group-'+group+'-item-'+id).attr('y', Math.round(value / 2.54) )
+}
