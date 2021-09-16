@@ -375,6 +375,11 @@ let height;
 let id;
 let group;
 
+var width_svg;
+var height_svg;
+var width_element_selected;
+var height_element_selected;
+
 $(document).on("click", "#add-doors", function () {
   if ($(".group-1-item-1").hasClass("hide")) {
     $(".group-1-item-1").removeClass("hide");
@@ -638,6 +643,14 @@ function handlePositionYElement(value) {
   $(".group-" + group + "-item-" + id).attr("y", Math.round(value / 2.54));
 }
 
+function set_size_svg(x, y){
+  let size_svg = $('#mainsvg').attr('viewBox');
+  width_svg = size_svg.split(" ")[2];
+  height_svg = size_svg.split(" ")[3];
+  width_element_selected = x;
+  height_element_selected = y;
+}
+
 $(document).mouseup(function (e) {
   for (let index = 1; index < 5; index++) {
     var container = $(".group-" + index);
@@ -676,6 +689,11 @@ function makeDraggable(evt) {
   function startDrag(evt) {
     if (evt.target.classList.contains("draggable")) {
       selectedElement = evt.target;
+      set_size_svg(
+        parseFloat(selectedElement.getAttributeNS(null, "width")),
+        parseFloat(selectedElement.getAttributeNS(null, "height"))
+      );
+
       offset = getMousePosition(evt);
       offset.x -= parseFloat(selectedElement.getAttributeNS(null, "x"));
       offset.y -= parseFloat(selectedElement.getAttributeNS(null, "y"));
@@ -685,8 +703,29 @@ function makeDraggable(evt) {
     if (selectedElement) {
       evt.preventDefault();
       var coord = getMousePosition(evt);
-      selectedElement.setAttributeNS(null, "x", coord.x - offset.x);
-      selectedElement.setAttributeNS(null, "y", coord.y - offset.y);
+      let coord_x = coord.x - offset.x;
+      let coord_y = coord.y - offset.y;
+
+      let set_value_x = coord.x - offset.x;
+      let set_value_y = coord.y - offset.y;
+
+      if(coord_x < 0) {
+        set_value_x = 0;
+      }
+      if(coord_x > (width_svg - width_element_selected)) {
+        set_value_x = width_svg - width_element_selected;
+      }
+      if(coord_y < 0){
+        set_value_y = 0
+      }
+      if(coord_y > (height_svg - height_element_selected)) {
+        set_value_y = height_svg - height_element_selected;
+      }
+
+      selectedElement.setAttributeNS(null, "x", set_value_x);
+      selectedElement.setAttributeNS(null, "y", set_value_y);
+
+      
     }
   }
   function endDrag(evt) {
@@ -695,6 +734,7 @@ function makeDraggable(evt) {
 
   function getMousePosition(evt) {
     var CTM = svg.getScreenCTM();
+    if (evt.touches) { evt = evt.touches[0]; }
     return {
       x: (evt.clientX - CTM.e) / CTM.a,
       y: (evt.clientY - CTM.f) / CTM.d,

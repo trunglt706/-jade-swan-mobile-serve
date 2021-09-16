@@ -60,7 +60,7 @@
                 <input type="number" class="form-control" value="0" min="0" id="height-element" style="font-size: 13px;">
             </div>
         </div>
-        <div class="col-md-3 col-6">
+        <!-- <div class="col-md-3 col-6">
             <label class="form-label">Position X</label>
             <div class="mb-3">
                 <input type="number" class="form-control" value="0" min="0" id="position-x-element" style="font-size: 13px;">
@@ -71,7 +71,7 @@
             <div class="mb-3">
                 <input type="number" class="form-control" value="0" min="0" id="position-y-element" style="font-size: 13px;">
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 
