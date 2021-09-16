@@ -335,9 +335,9 @@ $(document).ready(function () {
 
   /**/
   $(document).on("click", "#handle-submit", function () {
-    convert_img();
+    convert_img("download");
   });
-  function convert_img() {
+  function convert_img(type = "download") {
     var svg = document.querySelector("svg#mainsvg");
     var svgData = new XMLSerializer().serializeToString(svg);
 
@@ -352,12 +352,19 @@ $(document).ready(function () {
 
     img.onload = function () {
       ctx.drawImage(img, 0, 0);
-      // console.log( canvas.toDataURL( "image/png" ) );
       let result_image = canvas.toDataURL("image/png");
-      $("input[name=baseImage").val(result_image);
-      $("#submit-form").submit();
+      if (type == "download") {
+        $("input[name=baseImage").val(result_image);
+        $("#submit-form").submit();
+      } else if (type == "share") {
+        // share on facebook
+      }
     };
   }
+
+  $(document).on("click", "#handle-share", function () {
+    convert_img("share");
+  });
 });
 
 /*PATTERN*/
@@ -368,267 +375,329 @@ let height;
 let id;
 let group;
 
-$(document).on('click', '#add-doors', function(){
-  if($('.group-1-item-1').hasClass('hide')){
-    $('.group-1-item-1').removeClass('hide');
-    $('.group-1-item-1').show();
+$(document).on("click", "#add-doors", function () {
+  if ($(".group-1-item-1").hasClass("hide")) {
+    $(".group-1-item-1").removeClass("hide");
+    $(".group-1-item-1").show();
     return false;
   }
-  if($('.group-1-item-2').hasClass('hide')){
-    $('.group-1-item-2').removeClass('hide');
-    $('.group-1-item-2').show();
+  if ($(".group-1-item-2").hasClass("hide")) {
+    $(".group-1-item-2").removeClass("hide");
+    $(".group-1-item-2").show();
     return false;
   }
-  if($('.group-1-item-3').hasClass('hide')){
-    $('.group-1-item-3').removeClass('hide');
-    $('.group-1-item-3').show();
+  if ($(".group-1-item-3").hasClass("hide")) {
+    $(".group-1-item-3").removeClass("hide");
+    $(".group-1-item-3").show();
     return false;
   }
-  if($('.group-1-item-4').hasClass('hide')){
-    $('.group-1-item-4').removeClass('hide');
-    $('.group-1-item-4').show();
+  if ($(".group-1-item-4").hasClass("hide")) {
+    $(".group-1-item-4").removeClass("hide");
+    $(".group-1-item-4").show();
     return false;
   }
-  if($('.group-1-item-5').hasClass('hide')){
-    $('.group-1-item-5').removeClass('hide');
-    $('.group-1-item-5').show();
+  if ($(".group-1-item-5").hasClass("hide")) {
+    $(".group-1-item-5").removeClass("hide");
+    $(".group-1-item-5").show();
     return false;
   }
-  alert('Số lượng tối đa 5');
+  alert("Max elements is 5");
   return false;
-})
+});
 
-$(document).on('click', '#add-window', function(){
-  if($('.group-2-item-1').hasClass('hide')){
-    $('.group-2-item-1').removeClass('hide');
-    $('.group-2-item-1').show();
+$(document).on("click", "#add-window", function () {
+  if ($(".group-2-item-1").hasClass("hide")) {
+    $(".group-2-item-1").removeClass("hide");
+    $(".group-2-item-1").show();
     return false;
   }
-  if($('.group-2-item-2').hasClass('hide')){
-    $('.group-2-item-2').removeClass('hide');
-    $('.group-2-item-2').show();
+  if ($(".group-2-item-2").hasClass("hide")) {
+    $(".group-2-item-2").removeClass("hide");
+    $(".group-2-item-2").show();
     return false;
   }
-  if($('.group-2-item-3').hasClass('hide')){
-    $('.group-2-item-3').removeClass('hide');
-    $('.group-2-item-3').show();
+  if ($(".group-2-item-3").hasClass("hide")) {
+    $(".group-2-item-3").removeClass("hide");
+    $(".group-2-item-3").show();
     return false;
   }
-  if($('.group-2-item-4').hasClass('hide')){
-    $('.group-2-item-4').removeClass('hide');
-    $('.group-2-item-4').show();
+  if ($(".group-2-item-4").hasClass("hide")) {
+    $(".group-2-item-4").removeClass("hide");
+    $(".group-2-item-4").show();
     return false;
   }
-  if($('.group-2-item-5').hasClass('hide')){
-    $('.group-2-item-5').removeClass('hide');
-    $('.group-2-item-5').show();
+  if ($(".group-2-item-5").hasClass("hide")) {
+    $(".group-2-item-5").removeClass("hide");
+    $(".group-2-item-5").show();
     return false;
   }
-  alert('Số lượng tối đa 5');
+  alert("Max elements is 5");
   return false;
-})
+});
 
-$(document).on('click', '#add-power-socket', function(){
-  if($('.group-3-item-1').hasClass('hide')){
-    $('.group-3-item-1').removeClass('hide');
-    $('.group-3-item-1').show();
+$(document).on("click", "#add-power-socket", function () {
+  if ($(".group-3-item-1").hasClass("hide")) {
+    $(".group-3-item-1").removeClass("hide");
+    $(".group-3-item-1").show();
     return false;
   }
-  if($('.group-3-item-2').hasClass('hide')){
-    $('.group-3-item-2').removeClass('hide');
-    $('.group-3-item-2').show();
+  if ($(".group-3-item-2").hasClass("hide")) {
+    $(".group-3-item-2").removeClass("hide");
+    $(".group-3-item-2").show();
     return false;
   }
-  if($('.group-3-item-3').hasClass('hide')){
-    $('.group-3-item-3').removeClass('hide');
-    $('.group-3-item-3').show();
+  if ($(".group-3-item-3").hasClass("hide")) {
+    $(".group-3-item-3").removeClass("hide");
+    $(".group-3-item-3").show();
     return false;
   }
-  if($('.group-3-item-4').hasClass('hide')){
-    $('.group-3-item-4').removeClass('hide');
-    $('.group-3-item-4').show();
+  if ($(".group-3-item-4").hasClass("hide")) {
+    $(".group-3-item-4").removeClass("hide");
+    $(".group-3-item-4").show();
     return false;
   }
-  if($('.group-3-item-5').hasClass('hide')){
-    $('.group-3-item-5').removeClass('hide');
-    $('.group-3-item-5').show();
+  if ($(".group-3-item-5").hasClass("hide")) {
+    $(".group-3-item-5").removeClass("hide");
+    $(".group-3-item-5").show();
     return false;
   }
-  alert('Số lượng tối đa 5');
+  alert("Max elements is 5");
   return false;
-})
+});
 
-$(document).on('click', '#add-picture-frames', function(){
-  if($('.group-4-item-1').hasClass('hide')){
-    $('.group-4-item-1').removeClass('hide');
-    $('.group-4-item-1').show();
+$(document).on("click", "#add-picture-frames", function () {
+  if ($(".group-4-item-1").hasClass("hide")) {
+    $(".group-4-item-1").removeClass("hide");
+    $(".group-4-item-1").show();
     return false;
   }
-  if($('.group-4-item-2').hasClass('hide')){
-    $('.group-4-item-2').removeClass('hide');
-    $('.group-4-item-2').show();
+  if ($(".group-4-item-2").hasClass("hide")) {
+    $(".group-4-item-2").removeClass("hide");
+    $(".group-4-item-2").show();
     return false;
   }
-  if($('.group-4-item-3').hasClass('hide')){
-    $('.group-4-item-3').removeClass('hide');
-    $('.group-4-item-3').show();
+  if ($(".group-4-item-3").hasClass("hide")) {
+    $(".group-4-item-3").removeClass("hide");
+    $(".group-4-item-3").show();
     return false;
   }
-  if($('.group-4-item-4').hasClass('hide')){
-    $('.group-4-item-4').removeClass('hide');
-    $('.group-4-item-4').show();
+  if ($(".group-4-item-4").hasClass("hide")) {
+    $(".group-4-item-4").removeClass("hide");
+    $(".group-4-item-4").show();
     return false;
   }
-  if($('.group-4-item-5').hasClass('hide')){
-    $('.group-4-item-5').removeClass('hide');
-    $('.group-4-item-5').show();
+  if ($(".group-4-item-5").hasClass("hide")) {
+    $(".group-4-item-5").removeClass("hide");
+    $(".group-4-item-5").show();
     return false;
   }
-  alert('Số lượng tối đa 5');
+  alert("Max elements is 5");
   return false;
-})
+});
 
-$(document).on('click', '#delete', function(){
+$(document).on("click", "#delete", function () {
   let item_x, item_y, item_width, item_height;
-  if(group == 1){
+  if (group == 1) {
     item_x = 5;
     item_y = 10;
     item_width = 40;
     item_height = 78;
   }
-  if(group == 2){
+  if (group == 2) {
     item_x = 5;
     item_y = 10;
     item_width = 20;
     item_height = 48;
   }
-  if(group == 3){
+  if (group == 3) {
     item_x = 5;
     item_y = 10;
     item_width = 2;
     item_height = 4;
   }
-  if(group == 4){
+  if (group == 4) {
     item_x = 5;
     item_y = 10;
     item_width = 20;
     item_height = 20;
   }
-  $('.group-'+group+'-item-'+id).addClass('hide');
-  $('.group-'+group+'-item-'+id).hide();
-  $('.group-'+group+'-item-'+id).attr('x', item_x);
-  $('.group-'+group+'-item-'+id).attr('y', item_y);
-  $('.group-'+group+'-item-'+id).attr('width', item_width);
-  $('.group-'+group+'-item-'+id).attr('height', item_height);
+  $(".group-" + group + "-item-" + id).addClass("hide");
+  $(".group-" + group + "-item-" + id).hide();
+  $(".group-" + group + "-item-" + id).attr("x", item_x);
+  $(".group-" + group + "-item-" + id).attr("y", item_y);
+  $(".group-" + group + "-item-" + id).attr("width", item_width);
+  $(".group-" + group + "-item-" + id).attr("height", item_height);
   return false;
+});
 
-})
-
-$(document).on('click','.group-1', function(){
+$(document).on("click", ".group-1", function () {
   group = 1;
-  $('.group-1').css('stroke','#000');
-  $(this).css('stroke','#dc3545');
-  x = $(this).attr('x') * 2.54;
-  y = $(this).attr('y') * 2.54;
-  width = $(this).attr('width') * 2.54;
-  height = $(this).attr('height') * 2.54;
+  $(".group-1").css("stroke", "#000");
+  $(this).css("stroke", "#dc3545");
+  x = $(this).attr("x") * 2.54;
+  y = $(this).attr("y") * 2.54;
+  width = $(this).attr("width") * 2.54;
+  height = $(this).attr("height") * 2.54;
 
-  id = $(this).data('id');
-  $('.setting-element').removeClass('hide');
-  $('#width-element').val(Math.round(width));
-  $('#height-element').val(Math.round(height));
-  $('#position-x-element').val(Math.round(x));
-  $('#position-y-element').val(Math.round(y));
-})
+  id = $(this).data("id");
+  $(".setting-element").removeClass("hide");
+  $("#width-element").val(Math.round(width));
+  $("#height-element").val(Math.round(height));
+  $("#position-x-element").val(Math.round(x));
+  $("#position-y-element").val(Math.round(y));
+});
 
-$(document).on('click','.group-2', function(){
+$(document).on("click", ".group-2", function () {
   group = 2;
-  $('.group-2').css('stroke','#000');
-  $(this).css('stroke','#dc3545');
-  x = $(this).attr('x') * 2.54;
-  y = $(this).attr('y') * 2.54;
-  width = $(this).attr('width') * 2.54;
-  height = $(this).attr('height') * 2.54;
+  $(".group-2").css("stroke", "#000");
+  $(this).css("stroke", "#dc3545");
+  x = $(this).attr("x") * 2.54;
+  y = $(this).attr("y") * 2.54;
+  width = $(this).attr("width") * 2.54;
+  height = $(this).attr("height") * 2.54;
 
-  id = $(this).data('id');
-  $('.setting-element').removeClass('hide');
-  $('#width-element').val(Math.round(width));
-  $('#height-element').val(Math.round(height));
-  $('#position-x-element').val(Math.round(x));
-  $('#position-y-element').val(Math.round(y));
-})
+  id = $(this).data("id");
+  $(".setting-element").removeClass("hide");
+  $("#width-element").val(Math.round(width));
+  $("#height-element").val(Math.round(height));
+  $("#position-x-element").val(Math.round(x));
+  $("#position-y-element").val(Math.round(y));
+});
 
-$(document).on('click','.group-3', function(){
+$(document).on("click", ".group-3", function () {
   group = 3;
-  $('.group-3').css('stroke','#000');
-  $(this).css('stroke','#dc3545');
-  x = $(this).attr('x') * 2.54;
-  y = $(this).attr('y') * 2.54;
-  width = $(this).attr('width') * 2.54;
-  height = $(this).attr('height') * 2.54;
+  $(".group-3").css("stroke", "#000");
+  $(this).css("stroke", "#dc3545");
+  x = $(this).attr("x") * 2.54;
+  y = $(this).attr("y") * 2.54;
+  width = $(this).attr("width") * 2.54;
+  height = $(this).attr("height") * 2.54;
 
-  id = $(this).data('id');
-  $('.setting-element').removeClass('hide');
-  $('#width-element').val(Math.round(width));
-  $('#height-element').val(Math.round(height));
-  $('#position-x-element').val(Math.round(x));
-  $('#position-y-element').val(Math.round(y));
-})
+  id = $(this).data("id");
+  $(".setting-element").removeClass("hide");
+  $("#width-element").val(Math.round(width));
+  $("#height-element").val(Math.round(height));
+  $("#position-x-element").val(Math.round(x));
+  $("#position-y-element").val(Math.round(y));
+});
 
-$(document).on('click','.group-4', function(){
+$(document).on("click", ".group-4", function () {
   group = 4;
-  $('.group-4').css('stroke','#000');
-  $(this).css('stroke','#dc3545');
-  x = $(this).attr('x') * 2.54;
-  y = $(this).attr('y') * 2.54;
-  width = $(this).attr('width') * 2.54;
-  height = $(this).attr('height') * 2.54;
+  $(".group-4").css("stroke", "#000");
+  $(this).css("stroke", "#dc3545");
+  x = $(this).attr("x") * 2.54;
+  y = $(this).attr("y") * 2.54;
+  width = $(this).attr("width") * 2.54;
+  height = $(this).attr("height") * 2.54;
 
-  id = $(this).data('id');
-  $('.setting-element').removeClass('hide');
-  $('#width-element').val(Math.round(width));
-  $('#height-element').val(Math.round(height));
-  $('#position-x-element').val(Math.round(x));
-  $('#position-y-element').val(Math.round(y));
-})
-
+  id = $(this).data("id");
+  $(".setting-element").removeClass("hide");
+  $("#width-element").val(Math.round(width));
+  $("#height-element").val(Math.round(height));
+  $("#position-x-element").val(Math.round(x));
+  $("#position-y-element").val(Math.round(y));
+});
 
 $("#width-element").keyup(function () {
-    handleWidthElement($(this).val());
+  handleWidthElement($(this).val());
 });
 $("#width-element").on("change", function () {
-    handleWidthElement($(this).val());
+  handleWidthElement($(this).val());
 });
-function handleWidthElement(value){
-  $('.group-'+group+'-item-'+id).attr('width', Math.round(value / 2.54) )
+function handleWidthElement(value) {
+  $(".group-" + group + "-item-" + id).attr("width", Math.round(value / 2.54));
 }
 
 $("#height-element").keyup(function () {
-    handleHeightElement($(this).val());
+  handleHeightElement($(this).val());
 });
 $("#height-element").on("change", function () {
-    handleHeightElement($(this).val());
+  handleHeightElement($(this).val());
 });
-function handleHeightElement(value){
-  $('.group-'+group+'-item-'+id).attr('height', Math.round(value / 2.54) )
+function handleHeightElement(value) {
+  $(".group-" + group + "-item-" + id).attr("height", Math.round(value / 2.54));
 }
 
 $("#position-x-element").keyup(function () {
-    handlePositionXElement($(this).val());
+  handlePositionXElement($(this).val());
 });
 $("#position-x-element").on("change", function () {
-    handlePositionXElement($(this).val());
+  handlePositionXElement($(this).val());
 });
-function handlePositionXElement(value){
-  $('.group-'+group+'-item-'+id).attr('x', Math.round(value / 2.54) )
+function handlePositionXElement(value) {
+  $(".group-" + group + "-item-" + id).attr("x", Math.round(value / 2.54));
 }
 
 $("#position-y-element").keyup(function () {
-    handlePositionYElement($(this).val());
+  handlePositionYElement($(this).val());
 });
 $("#position-y-element").on("change", function () {
-    handlePositionYElement($(this).val());
+  handlePositionYElement($(this).val());
 });
-function handlePositionYElement(value){
-  $('.group-'+group+'-item-'+id).attr('y', Math.round(value / 2.54) )
+function handlePositionYElement(value) {
+  $(".group-" + group + "-item-" + id).attr("y", Math.round(value / 2.54));
+}
+
+$(document).mouseup(function (e) {
+  for (let index = 1; index < 5; index++) {
+    var container = $(".group-" + index);
+    var setting = $(".setting-element");
+    var width_element = $("#width-element");
+    var height_element = $("#height-element");
+    var x_element = $("#position-x-element");
+    var y_element = $("#position-y-element");
+
+    if (
+      !container.is(e.target) &&
+      !width_element.is(e.target) &&
+      !height_element.is(e.target) &&
+      !x_element.is(e.target) &&
+      !y_element.is(e.target) &&
+      container.has(e.target).length === 0
+    ) {
+      setting.addClass("hide");
+    }
+  }
+});
+
+function makeDraggable(evt) {
+  var svg = evt.target;
+  var selectedElement, offset;
+  svg.addEventListener("mousedown", startDrag);
+  svg.addEventListener("mousemove", drag);
+  svg.addEventListener("mouseup", endDrag);
+  svg.addEventListener("mouseleave", endDrag);
+  svg.addEventListener("touchstart", startDrag);
+  svg.addEventListener("touchmove", drag);
+  svg.addEventListener("touchend", endDrag);
+  svg.addEventListener("touchleave", endDrag);
+  svg.addEventListener("touchcancel", endDrag);
+
+  function startDrag(evt) {
+    if (evt.target.classList.contains("draggable")) {
+      selectedElement = evt.target;
+      offset = getMousePosition(evt);
+      offset.x -= parseFloat(selectedElement.getAttributeNS(null, "x"));
+      offset.y -= parseFloat(selectedElement.getAttributeNS(null, "y"));
+    }
+  }
+  function drag(evt) {
+    if (selectedElement) {
+      evt.preventDefault();
+      var coord = getMousePosition(evt);
+      selectedElement.setAttributeNS(null, "x", coord.x - offset.x);
+      selectedElement.setAttributeNS(null, "y", coord.y - offset.y);
+    }
+  }
+  function endDrag(evt) {
+    selectedElement = null;
+  }
+
+  function getMousePosition(evt) {
+    var CTM = svg.getScreenCTM();
+    return {
+      x: (evt.clientX - CTM.e) / CTM.a,
+      y: (evt.clientY - CTM.f) / CTM.d,
+    };
+  }
 }
