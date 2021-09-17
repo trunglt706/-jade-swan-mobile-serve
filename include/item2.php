@@ -3788,9 +3788,9 @@
    </g>
 
    <?php for ($i = 1; $i < 5; $i++) { ?>
-      <rect x="<?= $i * 10 ?>" y="10" width="40" height="78" style="fill:#8bc34a;stroke: #000;stroke-width: 0.2;display: none" class="group-1 group-1-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
-      <rect x="<?= $i * 10 ?>" y="10" width="20" height="40" style="fill:#bb3a31;stroke: #000;stroke-width: 0.2;display: none" class="group-2 group-2-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
-      <rect x="<?= $i * 10 ?>" y="10" width="20" height="20" style="fill:#6a635d;stroke: #000;stroke-width: 0.2;display: none" class="group-4 group-4-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
-      <rect x="<?= $i * 10 ?>" y="10" width="2" height="5" style="fill:#ffb400;stroke: #000;stroke-width: 0.2;display: none" class="group-3 group-3-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
+      <rect x="<?= $i * 10 ?>" y="10" width="40" height="78" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="group-1 group-1-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
+      <rect x="<?= $i * 10 ?>" y="10" width="20" height="40" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="group-2 group-2-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
+      <rect x="<?= $i * 10 ?>" y="10" width="20" height="20" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="group-4 group-4-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
+      <rect x="<?= $i * 10 ?>" y="10" width="2" height="5" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="group-3 group-3-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
    <?php } ?>
 </svg>

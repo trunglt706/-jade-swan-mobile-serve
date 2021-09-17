@@ -33,12 +33,12 @@
                             include($filename);
                             ?>
                         </div>
+                        <div class="pt-4 sidebar">
+                            <?php include('./include/form.php') ?>
+                        </div>
                     </div>
-                    <div data-v-1a96ae98="" class="col-md-2 col-sm-12 pt-4 sidebar">
-                        <?php include('./include/form.php') ?>
-                    </div>
-                    <div data-v-1a96ae98="" class="col-md-3 col-sm-12 colors">
-                        <label data-v-1a96ae98="" class="alt-font"><b>Colors <span class="color-selected"></span></b> </label>
+                    <div class="col-md-3 col-sm-12 colors pt-4">
+                        <label class="alt-font"><b>Colors <span class="color-selected"></span></b> </label>
                         <div><br></div>
                         <?php include('./include/color.php') ?>
                     </div>

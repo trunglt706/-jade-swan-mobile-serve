@@ -1,14 +1,28 @@
 <div class="row">
-    <div class="col-md-6 col-6">
+    <div class="col-md-3 col-6">
         <label class="form-label"><b>Width</b> <small>(Cm)</small></label>
         <div class="mb-3">
             <input type="number" class="form-control" value="366" min="0" id="CMWidth" style="font-size: 13px;">
         </div>
     </div>
-    <div class="col-md-6 col-6">
+    <div class="col-md-3 col-6">
         <label class="form-label"><b>Height</b> <small>(Cm)</small></label>
         <div class="mb-3">
             <input type="number" class="form-control" value="244" min="0" id="CMHeight" style="font-size: 13px;">
+        </div>
+    </div>
+    <div class="setting-element hide row" style="width:50%">
+        <div class="col-md-6 col-6">
+            <label class="form-label">Width element</label>
+            <div class="mb-3">
+                <input type="number" class="form-control" value="0" min="0" id="width-element" style="font-size: 13px;">
+            </div>
+        </div>
+        <div class="col-md-6 col-6">
+            <label class="form-label">Height element</label>
+            <div class="mb-3">
+                <input type="number" class="form-control" value="0" min="0" id="height-element" style="font-size: 13px;">
+            </div>
         </div>
     </div>
 </div>
@@ -44,35 +58,6 @@
     <button class="btn btn-secondary tool-mobile btn-share" id="handle-share" style="font-size: 13px;">
         Share
     </button>
-</div>
-
-<div class="setting-element hide">
-    <div class="row">
-        <div class="col-md-3 col-6">
-            <label class="form-label">Width element</label>
-            <div class="mb-3">
-                <input type="number" class="form-control" value="0" min="0" id="width-element" style="font-size: 13px;">
-            </div>
-        </div>
-        <div class="col-md-3 col-6">
-            <label class="form-label">Height element</label>
-            <div class="mb-3">
-                <input type="number" class="form-control" value="0" min="0" id="height-element" style="font-size: 13px;">
-            </div>
-        </div>
-        <!-- <div class="col-md-3 col-6">
-            <label class="form-label">Position X</label>
-            <div class="mb-3">
-                <input type="number" class="form-control" value="0" min="0" id="position-x-element" style="font-size: 13px;">
-            </div>
-        </div>
-        <div class="col-md-3 col-6">
-            <label class="form-label">Position Y</label>
-            <div class="mb-3">
-                <input type="number" class="form-control" value="0" min="0" id="position-y-element" style="font-size: 13px;">
-            </div>
-        </div> -->
-    </div>
 </div>
 
 <div class="list-btn">
