@@ -327,17 +327,6 @@ label[data-v-1a96ae98] {
   pointer-events: none;
 }
 
-@media (max-width: 576px) {
-  input,
-  select {
-    width: 100%;
-  }
-  .handleClear,
-  .handleFill {
-    display: none;
-  }
-}
-
 .block-action-btn button {
   width: 100%;
 }
@@ -415,3 +404,70 @@ label[data-v-1a96ae98] {
 .draggable {
   cursor: move;
 }
+
+/* footer */
+#site-footer {
+  background-image: url(https://pplusdesign.com/wp-content/themes/mts_ecommerce/images/pattern7.png);
+  position: relative;
+  overflow: hidden;
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-top: 30px;
+}
+.copyrights {
+  font-size: 16px;
+  color: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  float: left;
+  width: 100%;
+  clear: both;
+  padding-bottom: 11px;
+  padding-top: 14px;
+  text-align: center;
+  font-size: 14px;
+}
+.copyrights a {
+  color: #00bcb3;
+  text-decoration: none;
+}
+/* End footer */
+
+/* header */
+.header {
+  text-align: center;
+  padding: 20px;
+  background-image: url(https://pplusdesign.com/wp-content/themes/mts_ecommerce/images/pattern7.png);
+}
+/* End header */
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: rgba(233, 233, 233, 0.4);
+  -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 50%);
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* style mobile */
+@media (max-width: 576px) {
+  input,
+  select {
+    width: 100%;
+  }
+  .handleClear,
+  .handleFill,
+  .back-home,
+  .header,
+  #site-footer {
+    display: none;
+  }
+}
+/* End style mobile */

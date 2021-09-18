@@ -6,9 +6,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Design Tool</title>
-    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="style/css/mystyle.css">
+    <meta itemprop="name" content="PLAN +" />
+    <meta itemprop="url" content="https://pplusdesign.com" />
+    <title>PLAN + &#8211; Giải pháp màu sắc và âm thanh trong nội thất</title>
+    <link rel="icon" href="https://pplusdesign.com/wp-content/uploads/2021/09/LOGO-PPLUS-icon1.png" />
+    <link rel="stylesheet" type="text/css" href="/style/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/style/css/mystyle.css">
     <style type="text/css">
         html2canvas {
             width: 100px !important;
@@ -19,28 +22,41 @@
 
 <body>
     <div id="app" class="filzfelt">
-        <!---->
+        <div class="header">
+            <a href="https://pplusdesign.com">
+                <img src="https://pplusdesign.com/wp-content/uploads/2021/09/LOGO-PPLUS-icon1.png" alt="PLAN +">
+            </a>
+            <div class="text-uppercase">
+                PLAN + | <span>Giải pháp màu sắc và âm thanh trong nội thất</span>
+            </div>
+        </div>
         <div class="main">
             <div class="container">
-                <div class="editor row">
-                    <div class="main col-md-7 col-sm-12 pt-4">
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <a class="btn btn-info back-home" href="https://pplusdesign.com/danh-muc-san-pham/patterns/">QUAY LẠI</a>
+                    </div>
+                </div>
+                <div class="editor row mt-2">
+                    <div class="main col-md-8 col-sm-12">
                         <div id="pdf">
                             <div class="label-switch mb-2">
                                 <label class="alt-font"><b>Mẫu pattern</b></label>
                             </div>
                             <?php
-                            $filename = './include/item' . $_GET['id'] . '.php';
+                            $filename = 'include/item' . $_GET['id'] . '.php';
                             include($filename);
                             ?>
+                            <h5 class="text-danger">Fill in you wall's dimension</h5>
                         </div>
-                        <div class="pt-4 sidebar">
-                            <?php include('./include/form.php') ?>
+                        <div class="pt-1 sidebar">
+                            <?php include('include/form.php') ?>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-12 colors pt-4">
+                    <div class="col-md-3 col-sm-12 colors">
                         <label class="alt-font"><b>Colors <span class="color-selected"></span></b> </label>
                         <div><br></div>
-                        <?php include('./include/color.php') ?>
+                        <?php include('include/color.php') ?>
                     </div>
                 </div>
                 <!---->
@@ -48,11 +64,24 @@
         </div>
         <!---->
     </div>
-    <script src="style/js/jquery.min.js"></script>
-    <script src="style/js/bootstrap.bundle.js"></script>
+    <footer id="site-footer" role="contentinfo" itemscope="" itemtype="http://schema.org/WPFooter">
+        <div class="container">
+            <div class="copyrights">
+                <div class="row">
+                    <span>
+                        <a href="https://pplusdesign.com/" title="Giải pháp màu sắc và âm thanh trong nội thất">
+                            PLAN +
+                        </a> Copyright © 2021. Bản quyền thuộc về Jadeswan
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/style/js/jquery.min.js"></script>
+    <script src="/style/js/bootstrap.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <script src="style/js/myscript.js"></script>
+    <script src="/style/js/myscript.js"></script>
 </body>
 
 </html>

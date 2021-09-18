@@ -24,9 +24,10 @@ $html = '';
 $html .= '<img style="width:100%" src="' . $file_name . '.png"><br/><br/>';
 $html .= '<div>- Pattern: My Pattern</div>';
 $html .= '<div>- Size: ' . $_POST['baseWidth'] . 'cm x ' . $_POST['baseHeight'] . 'cm</div>';
+$html .= '<div>- Created at: ' . date('H:iA d/m/Y') . '</div>';
 
 /*------------------*/
-require_once __DIR__ . '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf();
 $mpdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
 $mpdf->Output('myfile.pdf', 'D');
