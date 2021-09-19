@@ -1,5 +1,8 @@
 <?php
 $baseImage = $_POST['baseImage'];
+$baseWidth = $_GET['baseWidth'];
+$baseHeight = $_GET['baseHeight'];
+$baseName = $_GET['baseName'];
 $file_name = 'pattern';
 
 function save_base64_image($base64_image_string, $output_file_without_extension, $path_with_end_slash = "")
@@ -22,11 +25,11 @@ save_base64_image($baseImage, $file_name);
 
 $html = '';
 $html .= '<img style="width:100%" src="' . $file_name . '.png"><br/><br/>';
-$html .= '<div>- Pattern: My Pattern</div>';
-$html .= '<div>- Size: ' . $_POST['baseWidth'] . 'cm x ' . $_POST['baseHeight'] . 'cm</div>';
+$html .= '<div>- Pattern: '.$baseName.'</div>';
+$html .= '<div>- Size: ' . $baseWidth . 'cm x ' . $baseHeight . 'cm</div>';
 
 /*------------------*/
 require_once __DIR__ . '/vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf();
 $mpdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
-$mpdf->Output('myfile.pdf', 'D');
+$mpdf->Output($baseName . '.pdf', 'D');
