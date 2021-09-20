@@ -643,8 +643,8 @@ function handlePositionYElement(value) {
   $(".group-" + group + "-item-" + id).attr("y", Math.round(value / 2.54));
 }
 
-function set_size_svg(x, y){
-  let size_svg = $('#mainsvg').attr('viewBox');
+function set_size_svg(x, y) {
+  let size_svg = $("#mainsvg").attr("viewBox");
   width_svg = size_svg.split(" ")[2];
   height_svg = size_svg.split(" ")[3];
   width_element_selected = x;
@@ -709,23 +709,21 @@ function makeDraggable(evt) {
       let set_value_x = coord.x - offset.x;
       let set_value_y = coord.y - offset.y;
 
-      if(coord_x < 0) {
+      if (coord_x < 0) {
         set_value_x = 0;
       }
-      if(coord_x > (width_svg - width_element_selected)) {
+      if (coord_x > width_svg - width_element_selected) {
         set_value_x = width_svg - width_element_selected;
       }
-      if(coord_y < 0){
-        set_value_y = 0
+      if (coord_y < 0) {
+        set_value_y = 0;
       }
-      if(coord_y > (height_svg - height_element_selected)) {
+      if (coord_y > height_svg - height_element_selected) {
         set_value_y = height_svg - height_element_selected;
       }
 
       selectedElement.setAttributeNS(null, "x", set_value_x);
       selectedElement.setAttributeNS(null, "y", set_value_y);
-
-      
     }
   }
   function endDrag(evt) {
@@ -734,7 +732,9 @@ function makeDraggable(evt) {
 
   function getMousePosition(evt) {
     var CTM = svg.getScreenCTM();
-    if (evt.touches) { evt = evt.touches[0]; }
+    if (evt.touches) {
+      evt = evt.touches[0];
+    }
     return {
       x: (evt.clientX - CTM.e) / CTM.a,
       y: (evt.clientY - CTM.f) / CTM.d,

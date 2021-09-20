@@ -55,6 +55,9 @@
     <button class="btn btn-danger tool-mobile btn-pdf" id="handle-submit" style="font-size: 13px;">
         PDF
     </button>
+    <button class="btn btn-info tool-mobile btn-save" id="handle-save" style="font-size: 13px;">
+        Save
+    </button>
     <button class="btn btn-secondary tool-mobile btn-share" id="handle-share" style="font-size: 13px;">
         Share
     </button>
