@@ -538,6 +538,9 @@ $(document).on("click", "#delete", function () {
 $(document).on("click", ".group-1", function () {
   group = 1;
   $(".group-1").css("stroke", "#000");
+  $(".group-2").css("stroke", "#000");
+  $(".group-3").css("stroke", "#000");
+  $(".group-4").css("stroke", "#000");
   $(this).css("stroke", "#dc3545");
   x = $(this).attr("x") * 2.54;
   y = $(this).attr("y") * 2.54;
@@ -554,7 +557,10 @@ $(document).on("click", ".group-1", function () {
 
 $(document).on("click", ".group-2", function () {
   group = 2;
+  $(".group-1").css("stroke", "#000");
   $(".group-2").css("stroke", "#000");
+  $(".group-3").css("stroke", "#000");
+  $(".group-4").css("stroke", "#000");
   $(this).css("stroke", "#dc3545");
   x = $(this).attr("x") * 2.54;
   y = $(this).attr("y") * 2.54;
@@ -571,7 +577,10 @@ $(document).on("click", ".group-2", function () {
 
 $(document).on("click", ".group-3", function () {
   group = 3;
+  $(".group-1").css("stroke", "#000");
+  $(".group-2").css("stroke", "#000");
   $(".group-3").css("stroke", "#000");
+  $(".group-4").css("stroke", "#000");
   $(this).css("stroke", "#dc3545");
   x = $(this).attr("x") * 2.54;
   y = $(this).attr("y") * 2.54;
@@ -588,6 +597,9 @@ $(document).on("click", ".group-3", function () {
 
 $(document).on("click", ".group-4", function () {
   group = 4;
+  $(".group-1").css("stroke", "#000");
+  $(".group-2").css("stroke", "#000");
+  $(".group-3").css("stroke", "#000");
   $(".group-4").css("stroke", "#000");
   $(this).css("stroke", "#dc3545");
   x = $(this).attr("x") * 2.54;

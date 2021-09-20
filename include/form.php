@@ -1,3 +1,11 @@
+<?php
+    $data_name = [
+        1 => 'ARO 1-001',
+        2 => 'ARO 2-001',
+    ];
+    $title = $data_name[$_GET['id']];
+?>
+
 <div class="row">
     <div class="col-md-3 col-6">
         <label class="form-label"><b>Width</b> <small>(Cm)</small></label>
@@ -44,6 +52,7 @@
     <input type="hidden" name="baseImage" value="">
     <input type="hidden" name="baseWidth" value="366">
     <input type="hidden" name="baseHeight" value="244">
+    <input type="hidden" name="baseName" value="<?php echo $title; ?>">
 </form>
 <div class="tool-right">
     <button class="btn-secondary btn-clear tool-mobile" onclick="$('.handleClear').trigger('click');">
@@ -55,12 +64,9 @@
     <button class="btn btn-danger tool-mobile btn-pdf" id="handle-submit" style="font-size: 13px;">
         PDF
     </button>
-    <button class="btn btn-info tool-mobile btn-save" id="handle-save" style="font-size: 13px;">
-        Save
-    </button>
-    <button class="btn btn-secondary tool-mobile btn-share" id="handle-share" style="font-size: 13px;">
+    <!-- <button class="btn btn-secondary tool-mobile btn-share" id="handle-share" style="font-size: 13px;">
         Share
-    </button>
+    </button> -->
 </div>
 
 <div class="list-btn">
