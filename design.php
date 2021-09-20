@@ -56,11 +56,7 @@
                                 <label class="alt-font"><b>Mẫu pattern</b></label>
                             </div>
                             <?php
-<<<<<<< HEAD
-                            $filename = 'include/item' . $_GET['id'] . '.php';
-=======
-                            $filename = './include/item/item' . $_GET['id'] . '.php';
->>>>>>> bab73552140fb78b102a8b96c12ca45790a8113d
+                            $filename = 'include/item/item' . $_GET['id'] . '.php';
                             include($filename);
                             ?>
                             <div class="text-danger mt-2">Fill in you wall's dimension</div>

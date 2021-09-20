@@ -1,9 +1,14 @@
 <?php
-    $data_name = [
-        1 => 'ARO 1-001',
-        2 => 'ARO 2-001',
-    ];
-    $title = $data_name[$_GET['id']];
+$data_name = [
+    1 => 'ARO 1-001',
+    2 => 'ARO 2-001',
+    3 => 'Picket-001',
+    4 => 'Goblet-001',
+    5 => 'ARO 3-001',
+    6 => 'ARO 4-001',
+    7 => 'Bottle-001'
+];
+$title = $data_name[$_GET['id']];
 ?>
 
 <div class="row">

@@ -25,17 +25,12 @@ save_base64_image($baseImage, $file_name);
 
 $html = '';
 $html .= '<img style="width:100%" src="' . $file_name . '.png"><br/><br/>';
-<<<<<<< HEAD
-$html .= '<div>- Pattern: My Pattern</div>';
-$html .= '<div>- Size: ' . $_POST['baseWidth'] . 'cm x ' . $_POST['baseHeight'] . 'cm</div>';
-$html .= '<div>- Created at: ' . date('H:iA d/m/Y') . '</div>';
-=======
-$html .= '<div>- Pattern: '.$baseName.'</div>';
+$html .= '<div>- Pattern: ' . $baseName . '</div>';
 $html .= '<div>- Size: ' . $baseWidth . 'cm x ' . $baseHeight . 'cm</div>';
->>>>>>> bab73552140fb78b102a8b96c12ca45790a8113d
+$html .= '<div>- Created at: ' . date('H:iA d/m/Y') . '</div>';
 
 /*------------------*/
 require_once 'vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf();
 $mpdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
-$mpdf->Output($baseName . '.pdf', 'D');
+$mpdf->Output($file_name . '.pdf', 'D');

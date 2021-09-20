@@ -8,11 +8,16 @@ $(document).ready(function () {
   $("polygon").on("click", function () {
     $(this).attr("fill", colorSeleted);
   });
+  $("path").on("click", function () {
+    $(this).attr("fill", colorSeleted);
+  });
   $(".handleClear").on("click", function () {
     $("polygon").attr("fill", "#FFF");
+    $("path").attr("fill", "#FFF");
   });
   $(".handleFill").on("click", function () {
     $("polygon").attr("fill", colorSeleted);
+    $("path").attr("fill", colorSeleted);
   });
 
   /*WIDTH*/
