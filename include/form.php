@@ -6,7 +6,13 @@ $data_name = [
     4 => 'Goblet-001',
     5 => 'ARO 3-001',
     6 => 'ARO 4-001',
-    7 => 'Bottle-001'
+    7 => 'Bottle-001',
+    8 => 'Fish-001',
+    9 => 'Hourglass-001',
+    10 => 'Plus-001',
+    11 => 'Rectangle-002',
+    12 => 'Triangle 60-001',
+    13 => 'Triangle 90-003'
 ];
 $title = $data_name[$_GET['id']];
 ?>
