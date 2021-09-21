@@ -15,6 +15,7 @@ $data_name = [
     13 => 'Triangle 90-003'
 ];
 $title = $data_name[$_GET['id']];
+$email = $_GET['email'] ?? '';
 ?>
 
 <div class="row">
@@ -64,6 +65,7 @@ $title = $data_name[$_GET['id']];
     <input type="hidden" name="baseWidth" value="366">
     <input type="hidden" name="baseHeight" value="244">
     <input type="hidden" name="baseName" value="<?php echo $title; ?>">
+    <input type="hidden" name="email" value="<?php echo $email; ?>">
 </form>
 <div class="tool-right">
     <button class="btn-secondary btn-clear tool-mobile" onclick="$('.handleClear').trigger('click');">
