@@ -342,6 +342,7 @@ $(document).ready(function () {
   $(document).on("click", "#handle-submit", function () {
     convert_img("download");
   });
+
   function convert_img(type = "download") {
     var svg = document.querySelector("svg#mainsvg");
     var svgData = new XMLSerializer().serializeToString(svg);
@@ -358,17 +359,14 @@ $(document).ready(function () {
     img.onload = function () {
       ctx.drawImage(img, 0, 0);
       let result_image = canvas.toDataURL("image/png");
-      if (type == "download") {
-        $("input[name=baseImage").val(result_image);
-        $("#submit-form").submit();
-      } else if (type == "share") {
-        // share on facebook
-      }
+      $("input[name=baseType").val(type);
+      $("input[name=baseImage").val(result_image);
+      $("#submit-form").submit();
     };
   }
 
-  $(document).on("click", "#handle-share", function () {
-    convert_img("share");
+  $(document).on("click", "#handle-save", function () {
+    convert_img("save");
   });
 });
 

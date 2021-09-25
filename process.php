@@ -4,17 +4,25 @@ $baseWidth = $_POST['baseWidth'];
 $baseHeight = $_POST['baseHeight'];
 $baseName = $_POST['baseName'];
 $baseEmail = $_POST['email'];
-$file_name = time() . '__' . $baseName . '__' . $baseWidth . '__' . $baseHeight . '__';
+$file_name = time() . '__' . sanitizeStringForUrl($baseName) . '__' . $baseWidth . '__' . $baseHeight . '__';
 
 $path_user = 'pattern/guest';
-if($baseEmail != ''){
+if ($baseEmail != '') {
 	$path_user = 'pattern/' . $baseEmail;
-	if (!file_exists($path_user)) {
-	    mkdir($path_user, 0777, true);
-	}
 }
-if (!file_exists('pattern/guest')) {
-    mkdir('pattern/guest', 0777, true);
+if (!file_exists($path_user)) {
+	mkdir($path_user, 0777, true);
+}
+
+function sanitizeStringForUrl($string)
+{
+	$string = strtolower($string);
+	$string = html_entity_decode($string);
+	$string = str_replace(array('ä', 'ü', 'ö', 'ß'), array('ae', 'ue', 'oe', 'ss'), $string);
+	$string = preg_replace('#[^\w\säüöß]#', null, $string);
+	$string = preg_replace('#[\s]{2,}#', ' ', $string);
+	$string = str_replace(array(' '), array('-'), $string);
+	return $string;
 }
 
 function save_base64_image($base64_image_string, $output_file_without_extension, $path_with_end_slash = "")
@@ -33,8 +41,7 @@ function save_base64_image($base64_image_string, $output_file_without_extension,
 	file_put_contents($path_with_end_slash . $output_file_with_extension, base64_decode($data));
 	return $output_file_with_extension;
 }
-save_base64_image($baseImage, $path_user . '/' .$file_name);
-
+save_base64_image($baseImage, $path_user . '/' . $file_name);
 $html = '';
 $html .= '<img style="width:100%" src="' . $path_user . '/' . $file_name . '.png"><br/><br/>';
 $html .= '<div>- Pattern: ' . $baseName . '</div>';

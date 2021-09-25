@@ -66,6 +66,7 @@ $email = $_GET['email'] ?? '';
     <input type="hidden" name="baseHeight" value="244">
     <input type="hidden" name="baseName" value="<?php echo $title; ?>">
     <input type="hidden" name="email" value="<?php echo $email; ?>">
+    <input type="hidden" name="baseType" value="download">
 </form>
 <div class="tool-right">
     <button class="btn-secondary btn-clear tool-mobile" onclick="$('.handleClear').trigger('click');">
@@ -77,8 +78,8 @@ $email = $_GET['email'] ?? '';
     <button class="btn btn-danger tool-mobile btn-pdf" id="handle-submit" style="font-size: 13px;">
         PDF
     </button>
-    <!-- <button class="btn btn-secondary tool-mobile btn-share" id="handle-share" style="font-size: 13px;">
-        Share
+    <!-- <button class="btn btn-secondary tool-mobile btn-save" id="handle-save" style="font-size: 13px;">
+        Save
     </button> -->
 </div>
 
