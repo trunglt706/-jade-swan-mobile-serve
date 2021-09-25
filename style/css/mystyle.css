@@ -455,6 +455,13 @@ label[data-v-1a96ae98] {
 ::-webkit-scrollbar {
   width: 5px;
 }
+#pdf svg {
+  max-width: 100% !important;
+}
+.btn-design {
+  background: #00bcb3;
+  color: #fff;
+}
 
 /* style mobile */
 @media (max-width: 576px) {

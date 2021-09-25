@@ -11,13 +11,18 @@ $(document).ready(function () {
   $("path").on("click", function () {
     $(this).attr("fill", colorSeleted);
   });
+  $("polyline").on("click", function () {
+    $(this).attr("fill", colorSeleted);
+  });
   $(".handleClear").on("click", function () {
     $("polygon").attr("fill", "#FFF");
     $("path").attr("fill", "#FFF");
+    $("polyline").attr("fill", "#FFF");
   });
   $(".handleFill").on("click", function () {
     $("polygon").attr("fill", colorSeleted);
     $("path").attr("fill", colorSeleted);
+    $("polyline").attr("fill", colorSeleted);
   });
 
   /*WIDTH*/
@@ -49,8 +54,8 @@ $(document).ready(function () {
       " " +
       Number(arrSize[3]);
     $("svg").attr("viewBox", joinSize);
-    $("rect").attr("width", Number(calWidth));
-    $("rect").attr("height", Number(arrSize[3]));
+    // $("rect").attr("width", Number(calWidth));
+    // $("rect").attr("height", Number(arrSize[3]));
 
     return false;
   }
@@ -84,8 +89,8 @@ $(document).ready(function () {
         " " +
         Number(arrSize[3]);
       $("svg").attr("viewBox", joinSize);
-      $("rect").attr("width", Number(calWidth));
-      $("rect").attr("height", Number(arrSize[3]));
+      // $("rect").attr("width", Number(calWidth));
+      // $("rect").attr("height", Number(arrSize[3]));
 
       return false;
     }
@@ -113,8 +118,8 @@ $(document).ready(function () {
         " " +
         Number(arrSize[3]);
       $("svg").attr("viewBox", joinSize);
-      $("rect").attr("width", Number(calWidth));
-      $("rect").attr("height", Number(arrSize[3]));
+      // $("rect").attr("width", Number(calWidth));
+      // $("rect").attr("height", Number(arrSize[3]));
 
       return false;
     }
@@ -138,8 +143,8 @@ $(document).ready(function () {
       " " +
       Number(arrSize[3]);
     $("svg").attr("viewBox", joinSize);
-    $("rect").attr("width", Number(calWidth));
-    $("rect").attr("height", Number(arrSize[3]));
+    // $("rect").attr("width", Number(calWidth));
+    // $("rect").attr("height", Number(arrSize[3]));
 
     return false;
   }
@@ -173,8 +178,8 @@ $(document).ready(function () {
       " " +
       Number(arrSize[3]);
     $("svg").attr("viewBox", joinSize);
-    $("rect").attr("width", Number(calWidth));
-    $("rect").attr("height", Number(arrSize[3]));
+    // $("rect").attr("width", Number(calWidth));
+    // $("rect").attr("height", Number(arrSize[3]));
 
     return false;
   }
@@ -208,8 +213,8 @@ $(document).ready(function () {
       " " +
       Number(calHeight);
     $("svg").attr("viewBox", joinSize);
-    $("rect").attr("width", Number(arrSize[2]));
-    $("rect").attr("height", Number(calHeight));
+    // $("rect").attr("width", Number(arrSize[2]));
+    // $("rect").attr("height", Number(calHeight));
 
     return false;
   }
@@ -243,8 +248,8 @@ $(document).ready(function () {
         " " +
         Number(calHeight);
       $("svg").attr("viewBox", joinSize);
-      $("rect").attr("width", Number(arrSize[2]));
-      $("rect").attr("height", Number(calHeight));
+      // $("rect").attr("width", Number(arrSize[2]));
+      // $("rect").attr("height", Number(calHeight));
 
       return false;
     }
@@ -272,8 +277,8 @@ $(document).ready(function () {
         " " +
         Number(calHeight);
       $("svg").attr("viewBox", joinSize);
-      $("rect").attr("width", Number(arrSize[2]));
-      $("rect").attr("height", Number(calHeight));
+      // $("rect").attr("width", Number(arrSize[2]));
+      // $("rect").attr("height", Number(calHeight));
 
       return false;
     }
@@ -297,8 +302,8 @@ $(document).ready(function () {
       " " +
       Number(calHeight);
     $("svg").attr("viewBox", joinSize);
-    $("rect").attr("width", Number(arrSize[2]));
-    $("rect").attr("height", Number(calHeight));
+    // $("rect").attr("width", Number(arrSize[2]));
+    // $("rect").attr("height", Number(calHeight));
 
     return false;
   }
@@ -332,8 +337,8 @@ $(document).ready(function () {
       " " +
       Number(calHeight);
     $("svg").attr("viewBox", joinSize);
-    $("rect").attr("width", Number(arrSize[2]));
-    $("rect").attr("height", Number(calHeight));
+    // $("rect").not(".draggable").attr("width", Number(arrSize[2]));
+    // $("rect").not(".draggable").attr("height", Number(calHeight));
 
     return false;
   }

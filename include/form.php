@@ -12,7 +12,9 @@ $data_name = [
     10 => 'Plus-001',
     11 => 'Rectangle-002',
     12 => 'Triangle 60-001',
-    13 => 'Triangle 90-003'
+    13 => 'Triangle 90-003',
+    14 => 'goblet-005',
+    15 => 'PLAN+23'
 ];
 $title = $data_name[$_GET['id']];
 $email = $_GET['email'] ?? '';
@@ -22,13 +24,13 @@ $email = $_GET['email'] ?? '';
     <div class="col-md-3 col-6">
         <label class="form-label"><b>Width</b> <small>(Cm)</small></label>
         <div class="mb-3">
-            <input type="number" class="form-control" value="366" min="0" id="CMWidth" style="font-size: 13px;">
+            <input type="number" class="form-control" value="1900" min="0" id="CMWidth" style="font-size: 13px;">
         </div>
     </div>
     <div class="col-md-3 col-6">
         <label class="form-label"><b>Height</b> <small>(Cm)</small></label>
         <div class="mb-3">
-            <input type="number" class="form-control" value="244" min="0" id="CMHeight" style="font-size: 13px;">
+            <input type="number" class="form-control" value="900" min="0" id="CMHeight" style="font-size: 13px;">
         </div>
     </div>
     <div class="setting-element hide row" style="width:50%">
@@ -50,7 +52,7 @@ $email = $_GET['email'] ?? '';
     <div class="row">
         <div class="col-md-3">
             <div class="mb-3">
-                <button type="button" class="btn btn-secondary handleClear">Clear</button>
+                <button type="button" class="btn handleClear">Clear</button>
             </div>
         </div>
         <div class="col-md-3">
@@ -62,23 +64,23 @@ $email = $_GET['email'] ?? '';
 </div>
 <form id="submit-form" action="/process.php" method="POST">
     <input type="hidden" name="baseImage" value="">
-    <input type="hidden" name="baseWidth" value="366">
-    <input type="hidden" name="baseHeight" value="244">
+    <input type="hidden" name="baseWidth" value="1900">
+    <input type="hidden" name="baseHeight" value="900">
     <input type="hidden" name="baseName" value="<?php echo $title; ?>">
     <input type="hidden" name="email" value="<?php echo $email; ?>">
     <input type="hidden" name="baseType" value="download">
 </form>
 <div class="tool-right">
-    <button class="btn-secondary btn-clear tool-mobile" onclick="$('.handleClear').trigger('click');">
+    <button class="btn-design btn-clear tool-mobile" onclick="$('.handleClear').trigger('click');">
         Clear
     </button>
-    <button class="btn-success btn-fill tool-mobile" onclick="$('.handleFill').trigger('click');">
+    <button class="btn-design btn-fill tool-mobile" onclick="$('.handleFill').trigger('click');">
         Fill
     </button>
-    <button class="btn btn-danger tool-mobile btn-pdf" id="handle-submit" style="font-size: 13px;">
+    <button class="btn btn-design tool-mobile btn-pdf" id="handle-submit" style="font-size: 13px;">
         PDF
     </button>
-    <!-- <button class="btn btn-secondary tool-mobile btn-save" id="handle-save" style="font-size: 13px;">
+    <!-- <button class="btn-design btn tool-mobile btn-save" id="handle-save" style="font-size: 13px;">
         Save
     </button> -->
 </div>
