@@ -6,7 +6,7 @@
      user-select: none;
      background: white;'>
       <switch>
-            <g i:extraneous="self">
+            <g>
                   <polyline fill="#fff" stroke="#000000" stroke-width="0.2835" stroke-miterlimit="10" points="18.562,752.412 18.562,731.954 
 			9.438,721.705 0.315,731.954 0.315,752.412 9.438,762.644 18.562,752.412 		" />
                   <polyline fill="#fff" stroke="#000000" stroke-width="0.2835" stroke-miterlimit="10" points="36.809,752.412 36.809,731.954 

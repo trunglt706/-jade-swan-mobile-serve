@@ -6,7 +6,7 @@
      user-select: none;
      background: white;'>
    <switch>
-      <g i:extraneous="self">
+      <g>
          <path fill="#fff" stroke="#000000" stroke-width="0.2835" stroke-miterlimit="10" d="M0.154,793.546v-35.374h5.223
 			c1.927,2.56,2.992,5.68,2.992,8.875c0,3.169-1.04,6.264-2.955,8.798l0,0c-1.915,2.563-2.942,5.655-2.942,8.825
 			c0,3.195,1.054,6.313,2.98,8.876l0,0H0.154" />

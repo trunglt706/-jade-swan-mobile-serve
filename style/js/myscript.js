@@ -11,7 +11,7 @@ $(document).ready(function () {
   $("path").on("click", function () {
     $(this).attr("fill", colorSeleted);
   });
-  $("polyline").on("click", function () {
+   $("polyline").on("click", function () {
     $(this).attr("fill", colorSeleted);
   });
   $(".handleClear").on("click", function () {
@@ -54,8 +54,8 @@ $(document).ready(function () {
       " " +
       Number(arrSize[3]);
     $("svg").attr("viewBox", joinSize);
-    // $("rect").attr("width", Number(calWidth));
-    // $("rect").attr("height", Number(arrSize[3]));
+    $("rect").attr("width", Number(calWidth));
+    $("rect").attr("height", Number(arrSize[3]));
 
     return false;
   }
@@ -89,8 +89,8 @@ $(document).ready(function () {
         " " +
         Number(arrSize[3]);
       $("svg").attr("viewBox", joinSize);
-      // $("rect").attr("width", Number(calWidth));
-      // $("rect").attr("height", Number(arrSize[3]));
+      $("rect").attr("width", Number(calWidth));
+      $("rect").attr("height", Number(arrSize[3]));
 
       return false;
     }
@@ -118,8 +118,8 @@ $(document).ready(function () {
         " " +
         Number(arrSize[3]);
       $("svg").attr("viewBox", joinSize);
-      // $("rect").attr("width", Number(calWidth));
-      // $("rect").attr("height", Number(arrSize[3]));
+      $("rect").attr("width", Number(calWidth));
+      $("rect").attr("height", Number(arrSize[3]));
 
       return false;
     }
@@ -143,8 +143,8 @@ $(document).ready(function () {
       " " +
       Number(arrSize[3]);
     $("svg").attr("viewBox", joinSize);
-    // $("rect").attr("width", Number(calWidth));
-    // $("rect").attr("height", Number(arrSize[3]));
+    $("rect").attr("width", Number(calWidth));
+    $("rect").attr("height", Number(arrSize[3]));
 
     return false;
   }
@@ -178,8 +178,8 @@ $(document).ready(function () {
       " " +
       Number(arrSize[3]);
     $("svg").attr("viewBox", joinSize);
-    // $("rect").attr("width", Number(calWidth));
-    // $("rect").attr("height", Number(arrSize[3]));
+    $("rect").attr("width", Number(calWidth));
+    $("rect").attr("height", Number(arrSize[3]));
 
     return false;
   }
@@ -213,8 +213,8 @@ $(document).ready(function () {
       " " +
       Number(calHeight);
     $("svg").attr("viewBox", joinSize);
-    // $("rect").attr("width", Number(arrSize[2]));
-    // $("rect").attr("height", Number(calHeight));
+    $("rect").attr("width", Number(arrSize[2]));
+    $("rect").attr("height", Number(calHeight));
 
     return false;
   }
@@ -248,8 +248,8 @@ $(document).ready(function () {
         " " +
         Number(calHeight);
       $("svg").attr("viewBox", joinSize);
-      // $("rect").attr("width", Number(arrSize[2]));
-      // $("rect").attr("height", Number(calHeight));
+      $("rect").attr("width", Number(arrSize[2]));
+      $("rect").attr("height", Number(calHeight));
 
       return false;
     }
@@ -277,8 +277,8 @@ $(document).ready(function () {
         " " +
         Number(calHeight);
       $("svg").attr("viewBox", joinSize);
-      // $("rect").attr("width", Number(arrSize[2]));
-      // $("rect").attr("height", Number(calHeight));
+      $("rect").attr("width", Number(arrSize[2]));
+      $("rect").attr("height", Number(calHeight));
 
       return false;
     }
@@ -302,8 +302,8 @@ $(document).ready(function () {
       " " +
       Number(calHeight);
     $("svg").attr("viewBox", joinSize);
-    // $("rect").attr("width", Number(arrSize[2]));
-    // $("rect").attr("height", Number(calHeight));
+    $("rect").attr("width", Number(arrSize[2]));
+    $("rect").attr("height", Number(calHeight));
 
     return false;
   }
@@ -337,8 +337,8 @@ $(document).ready(function () {
       " " +
       Number(calHeight);
     $("svg").attr("viewBox", joinSize);
-    // $("rect").not(".draggable").attr("width", Number(arrSize[2]));
-    // $("rect").not(".draggable").attr("height", Number(calHeight));
+    $("rect").attr("width", Number(arrSize[2]));
+    $("rect").attr("height", Number(calHeight));
 
     return false;
   }
@@ -347,7 +347,6 @@ $(document).ready(function () {
   $(document).on("click", "#handle-submit", function () {
     convert_img("download");
   });
-
   function convert_img(type = "download") {
     var svg = document.querySelector("svg#mainsvg");
     var svgData = new XMLSerializer().serializeToString(svg);
@@ -364,14 +363,17 @@ $(document).ready(function () {
     img.onload = function () {
       ctx.drawImage(img, 0, 0);
       let result_image = canvas.toDataURL("image/png");
-      $("input[name=baseType").val(type);
-      $("input[name=baseImage").val(result_image);
-      $("#submit-form").submit();
+      if (type == "download") {
+        $("input[name=baseImage").val(result_image);
+        $("#submit-form").submit();
+      } else if (type == "share") {
+        // share on facebook
+      }
     };
   }
 
-  $(document).on("click", "#handle-save", function () {
-    convert_img("save");
+  $(document).on("click", "#handle-share", function () {
+    convert_img("share");
   });
 });
 
