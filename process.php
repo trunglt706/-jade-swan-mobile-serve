@@ -3,8 +3,16 @@ $baseImage = $_POST['baseImage'];
 $baseWidth = $_POST['baseWidth'];
 $baseHeight = $_POST['baseHeight'];
 $baseName = $_POST['baseName'];
+$baseColor = $_POST['baseColor'];
 $baseEmail = $_POST['email'];
 $file_name = time() . '__' . sanitizeStringForUrl($baseName) . '__' . $baseWidth . '__' . $baseHeight . '__';
+$arr_color = ( json_decode( $baseColor, 1) );
+
+/*Write color*/
+$myfile = fopen("pattern/color/".$file_name.".txt", "w");
+$txt = $baseColor;
+fwrite($myfile, $txt);
+fclose($myfile);
 
 $path_user = 'pattern/guest';
 if ($baseEmail != '') {
@@ -42,15 +50,64 @@ function save_base64_image($base64_image_string, $output_file_without_extension,
 	return $output_file_with_extension;
 }
 save_base64_image($baseImage, $path_user . '/' . $file_name);
+
+$image = $path_user . '/' . $file_name . '.png';
+
 $html = '';
-$html .= '<img style="width:100%" src="' . $path_user . '/' . $file_name . '.png"><br/><br/>';
+$html .= '<div style="">';
+
+$html .= '<div style="
+    padding-top: 170px;
+	height: 500px;
+    background-image: url('. $image .');
+    background-repeat: no-repeat;
+    background-size: contain;">';
+
+$html .= '<div style="
+    background-image: url(style/images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120px;">';
+$html .= '<div style="
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 60px;">';
+$html .= '</div>';
+$html .= '</div>';
+$html .= '</div>';
+
+// $html .= '<div><img style="width:100%" src="' . $path_user . '/' . $file_name . '.png"></div><br/><br/>';
+$html .= '<div style="margin-top: -170px;">';
+
+if(!empty($arr_color)){
+	$html .= '<div><b>Color:</b></div>';
+	foreach ($arr_color as $key => $item) {
+		$html .= '<div style="margin-top:10px;">';
+		$html .= '<div style="
+					width: 30px;
+				    height: 20px;
+				    background: '.$item.';
+				    display: inline-block;
+				    float:left;
+				"></div>';
+		$html .= '<div>&nbsp;&nbsp;&nbsp;'.$item.'</div>';
+		$html .= '</div>';
+	}
+	$html .= '<div><br></div>';
+}
+$html .= '</div>';
+
 $html .= '<div>- Pattern: ' . $baseName . '</div>';
 $html .= '<div>- Size: ' . $baseWidth . 'cm x ' . $baseHeight . 'cm</div>';
 $html .= '<div>- Created at: ' . date('H:iA d/m/Y') . '</div>';
+$html .= '<div><br></div>';
+$html .= '<div>- Thank you for your design</div>';
+$html .= '<div>- Please let us know if you have inquiry: <span style="color:green">hi@pplusdesign.com</span></div>';
+$html .= '<div>';
 
 // echo $html;
+// die;
 /*------------------*/
 require_once 'vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf();
-$mpdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
+$mpdf->WriteHTML($html);
 $mpdf->Output($baseName . '.pdf', 'D');

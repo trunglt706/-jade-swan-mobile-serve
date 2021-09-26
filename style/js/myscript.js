@@ -348,6 +348,19 @@ $(document).ready(function () {
 
   /**/
   $(document).on("click", "#handle-submit", function () {
+    let get_color;
+    let arr_color = [];
+    $( "svg#mainsvg polygon" ).each(function( index ) {
+      get_color = ( $(this).attr('fill') );
+      if(get_color != "#fff" && get_color != "rgb(0, 0, 0)"){
+        arr_color.push(get_color);
+      }
+    });
+    let uniqueArray = arr_color.filter(function(item, pos, self) {
+      return self.indexOf(item) == pos;
+    })
+    $("input[name=baseColor").val(JSON.stringify(uniqueArray));
+    
     convert_img("download");
   });
 
@@ -668,8 +681,14 @@ function handlePositionYElement(value) {
 
 function set_size_svg(x, y) {
   let size_svg = $("#mainsvg").attr("viewBox");
-  width_svg = size_svg.split(" ")[2];
-  height_svg = size_svg.split(" ")[3];
+  // width_svg = size_svg.split(" ")[2];
+  // height_svg = size_svg.split(" ")[3];
+
+  width_svg = $('switch').width();
+  height_svg = $('switch').height();
+
+  console.log(width_svg, height_svg);
+
   width_element_selected = x;
   height_element_selected = y;
 }
