@@ -1,4 +1,4 @@
-<svg data-v-55219509="" data-v-1a96ae98="" onload="makeDraggable(evt)" preserveAspectRatio="xMinYMin meet" x="0px" y="0px" width="793.7px" height="793.7px" viewBox="0 0 438.483 275.59055118110234" class="design-svg" id="mainsvg" style='
+<svg data-v-55219509="" data-v-1a96ae98="" onload="makeDraggable(evt)" preserveAspectRatio="xMinYMin meet" viewBox="0 0 438.483 275.59055118110234" class="design-svg" id="mainsvg" style='
       display: block;
      -webkit-user-select: none;
      -moz-user-select: none;

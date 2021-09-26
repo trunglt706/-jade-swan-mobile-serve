@@ -357,7 +357,7 @@ $(document).ready(function () {
       return self.indexOf(item) == pos;
     })
     $("input[name=baseColor").val(JSON.stringify(uniqueArray));
-    
+
     convert_img("download");
   });
 
@@ -678,13 +678,8 @@ function handlePositionYElement(value) {
 
 function set_size_svg(x, y) {
   let size_svg = $("#mainsvg").attr("viewBox");
-  // width_svg = size_svg.split(" ")[2];
-  // height_svg = size_svg.split(" ")[3];
-
-  width_svg = $('switch').width();
-  height_svg = $('switch').height();
-
-  console.log(width_svg, height_svg);
+  width_svg = size_svg.split(" ")[2];
+  height_svg = size_svg.split(" ")[3];
 
   width_element_selected = x;
   height_element_selected = y;
