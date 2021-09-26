@@ -57,6 +57,7 @@ $email = $_GET['email'] ?? '';
     <input type="hidden" name="baseHeight" value="900">
     <input type="hidden" name="baseName" value="<?php echo $title; ?>">
     <input type="hidden" name="email" value="<?php echo $email; ?>">
+    <input type="hidden" name="baseColor" value="">
     <input type="hidden" name="baseType" value="download">
 </form>
 <div class="tool-right">
