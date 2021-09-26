@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  handleCMHeight(350);
+  handleCMWidth(573);
+
   let colorSeleted = "#FFF";
   $(".colors-container .color-circle-container").on("click", function () {
     let style_color = $(this).find("button").css("background-color");
