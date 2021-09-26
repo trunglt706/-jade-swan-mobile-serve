@@ -155,8 +155,20 @@ $(document).ready(function () {
   $("#CMWidth").on("change", function () {
     handleCMWidth($(this).val());
   });
-
+  let width_pattern_before_change = Number($("#CMWidth").val());
   function handleCMWidth(val) {
+    /*Set value input element drag when zoom*/
+    let width_pattern = width_pattern_before_change;
+    let new_width_pattern = Number(val);
+    /*each*/
+    $( "svg rect" ).each(function( index ) {
+      let width_element = Number($(this).attr('width'));
+      let new_width_element = (new_width_pattern * width_element / width_pattern).toFixed(2);
+      $(this).attr('width', new_width_element);
+    });
+    width_pattern_before_change = Number(val);
+    /*----*/
+
     let CMWidth = Number(val);
     let FeetWidth = Math.trunc(CMWidth / 30.48);
     let InchesWidth = (CMWidth / 30.48 - FeetWidth) * 12;
@@ -315,7 +327,19 @@ $(document).ready(function () {
     handleCMHeight($(this).val());
   });
 
+  let height_pattern_before_change = Number($("#CMHeight").val());
   function handleCMHeight(val) {
+    /*Set value input element drag when zoom*/
+    let height_pattern = height_pattern_before_change;
+    let new_height_pattern = Number(val);
+    /*each*/
+    $( "svg rect" ).each(function( index ) {
+      let height_element = Number($(this).attr('height'));
+      let new_height_element = (new_height_pattern * height_element / height_pattern).toFixed(2);
+      $(this).attr('height', new_height_element);
+    });
+    height_pattern_before_change = Number(val);
+    /*----*/
     let CMHeight = Number(val);
     let FeetHeight = Math.trunc(CMHeight / 30.48);
     let InchesHeight = (CMHeight / 30.48 - FeetHeight) * 12;
