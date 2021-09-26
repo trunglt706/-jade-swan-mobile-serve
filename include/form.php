@@ -1,9 +1,30 @@
 <?php
 $data_name = [
-    1 => 'ARO 1-001',
-    2 => 'ARO 2-001',
-    3 => 'Picket-001',
+    1 => 'PLAN+1_AroBlock01',
+    2 => 'PLAN+2_Goblet',
+    3 => 'PLAN+3_Picket',
+    4 => 'PLAN+4_Plus',
+    5 => 'PLAN+5_AroBlock4',
+    6 => 'PLAN+6_Bottle',
+    7 => 'PLAN+7_Chevron',
+    8 => 'PLAN+8_Diamond',
+    9 => 'PLAN+9_Dart',
+    10 => 'PLAN+10_Fish',
     23 => 'Goblet-001',
+    24 => 'Picket-001',
+    25 => 'Picket-001',
+    26 => 'Picket-001',
+    27 => 'Picket-001',
+    28 => 'Picket-001',
+    29 => 'Picket-001',
+    30 => 'Picket-001',
+    31 => 'Picket-001',
+    32 => 'Picket-001',
+    33 => 'Picket-001',
+    34 => 'Picket-001',
+    35 => 'Picket-001',
+    36 => 'Picket-001',
+    37 => 'Picket-001',
 ];
 $title = $data_name[$_GET['id']];
 $email = $_GET['email'] ?? '';
@@ -13,13 +34,13 @@ $email = $_GET['email'] ?? '';
     <div class="col-md-3 col-6">
         <label class="form-label"><b>Width</b> <small>(Cm)</small></label>
         <div class="mb-3">
-            <input type="number" class="form-control" value="1900" min="0" id="CMWidth" style="font-size: 13px;">
+            <input type="number" class="form-control" value="1761" min="0" id="CMWidth" style="font-size: 13px;">
         </div>
     </div>
     <div class="col-md-3 col-6">
         <label class="form-label"><b>Height</b> <small>(Cm)</small></label>
         <div class="mb-3">
-            <input type="number" class="form-control" value="900" min="0" id="CMHeight" style="font-size: 13px;">
+            <input type="number" class="form-control" value="1077" min="0" id="CMHeight" style="font-size: 13px;">
         </div>
     </div>
     <div class="setting-element hide row" style="width:50%">
@@ -53,8 +74,8 @@ $email = $_GET['email'] ?? '';
 </div>
 <form id="submit-form" action="/process.php" method="POST">
     <input type="hidden" name="baseImage" value="">
-    <input type="hidden" name="baseWidth" value="1900">
-    <input type="hidden" name="baseHeight" value="900">
+    <input type="hidden" name="baseWidth" value="1761">
+    <input type="hidden" name="baseHeight" value="1077">
     <input type="hidden" name="baseName" value="<?php echo $title; ?>">
     <input type="hidden" name="email" value="<?php echo $email; ?>">
     <input type="hidden" name="baseType" value="download">

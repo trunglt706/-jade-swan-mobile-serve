@@ -1,4 +1,4 @@
-<svg data-v-55219509="" data-v-1a96ae98="" onload="makeDraggable(evt)" preserveAspectRatio="xMinYMin meet" x="0px" y="0px" width="793.7px" height="793.7px" viewBox="0 0 438.483 275.59055118110234" class="design-svg" id="mainsvg" style='
+<svg data-v-55219509="" data-v-1a96ae98="" onload="makeDraggable(evt)" preserveAspectRatio="xMinYMin meet" x="0px" y="0px" width="695" height="425" viewBox="0 0 695 425" class="design-svg" id="mainsvg" style='
       display: block;
      -webkit-user-select: none;
      -moz-user-select: none;
@@ -1726,9 +1726,9 @@
       </g>
    </switch>
    <?php for ($i = 1; $i < 5; $i++) { ?>
-      <rect x="<?= $i * 10 ?>" y="10" width="37" height="87" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-1 group-1-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
+      <rect x="<?= $i * 10 ?>" y="10" width="37.5" height="86.5" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-1 group-1-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
       <rect x="<?= $i * 10 ?>" y="10" width="20" height="40" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-2 group-2-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
       <rect x="<?= $i * 10 ?>" y="10" width="20" height="20" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-4 group-4-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
-      <rect x="<?= $i * 10 ?>" y="10" width="2" height="4" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-3 group-3-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
+      <rect x="<?= $i * 10 ?>" y="10" width="2.8" height="4.8" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-3 group-3-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
    <?php } ?>
 </svg>
