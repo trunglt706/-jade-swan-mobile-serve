@@ -33,7 +33,7 @@
             <div class="container">
                 <div class="row mt-2">
                     <div class="col-md-12">
-                        <a class="btn btn-design back-home" href="https://pplusdesign.com/san-pham/23-svg/">
+                        <a id="myButton" class="btn btn-design back-home" href="https://pplusdesign.com/san-pham/23-svg/">
                             <img src="https://pplusdesign.com/wp-content/uploads/2021/09/back-arrow.png" alt="back">
                             QUAY LẠI
                         </a>
@@ -45,11 +45,22 @@
                             <div class="label-switch mb-2">
                                 <label class="alt-font"><b>Mẫu pattern</b></label>
                             </div>
-                            <?php
-                            $filename = 'include/item/item' . $_GET['id'] . '.php';
-                            include($filename);
-                            ?>
-                            <div class="text-danger mt-2">Fill in you wall's dimension</div>
+                            <div style="border: 1px solid;">
+                                <?php
+                                $filename = 'include/item/item' . $_GET['id'] . '.php';
+                                include($filename);
+                                ?>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-7">
+                                    <div class="text-danger mt-2">Fill in you wall's dimension</div>
+                                </div>
+                                <div class="col-sm-5 div-pdf" style="text-align: right;">
+                                    <button class="btn btn-design btn-pdf" id="handle-submit" style="font-size: 13px;">
+                                        Download your design
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <div class="pt-1 sidebar">
                             <?php include('include/form.php') ?>
@@ -83,6 +94,11 @@
     <script src="/style/js/bootstrap.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+        tippy('[data-tippy-content]');
+    </script>
     <script src="/style/js/myscript.js"></script>
 </body>
 

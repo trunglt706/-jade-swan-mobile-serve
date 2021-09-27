@@ -386,10 +386,10 @@ $(document).ready(function () {
         arr_color.push(get_color);
       }
     });
-    let uniqueArray = arr_color.filter(function (item, pos, self) {
-      return self.indexOf(item) == pos;
-    });
-    $("input[name=baseColor").val(JSON.stringify(uniqueArray));
+    // let uniqueArray = arr_color.filter(function (item, pos, self) {
+    //   return self.indexOf(item) == pos;
+    // });
+    $("input[name=baseColor").val(JSON.stringify(arr_color));
 
     convert_img("download");
   });

@@ -88,12 +88,6 @@ $email = $_GET['email'] ?? '';
     <button class="btn-design btn-fill tool-mobile" onclick="$('.handleFill').trigger('click');">
         Fill
     </button>
-    <button class="btn btn-design tool-mobile btn-pdf" id="handle-submit" style="font-size: 13px;">
-        PDF
-    </button>
-    <!-- <button class="btn-design btn tool-mobile btn-save" id="handle-save" style="font-size: 13px;">
-        Save
-    </button> -->
 </div>
 
 <div class="list-btn">

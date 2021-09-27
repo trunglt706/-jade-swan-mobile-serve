@@ -476,5 +476,10 @@ label[data-v-1a96ae98] {
   #site-footer {
     display: none;
   }
+
+  .div-pdf {
+    text-align: left !important;
+    margin: 5px 0px;
+  }
 }
 /* End style mobile */

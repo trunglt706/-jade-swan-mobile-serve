@@ -6,13 +6,8 @@ $baseName = $_POST['baseName'];
 $baseColor = $_POST['baseColor'];
 $baseEmail = $_POST['email'];
 $file_name = time() . '__' . sanitizeStringForUrl($baseName) . '__' . $baseWidth . '__' . $baseHeight . '__';
-$arr_color = ( json_decode( $baseColor, 1) );
-
-/*Write color*/
-$myfile = fopen("pattern/color/".$file_name.".txt", "w");
-$txt = $baseColor;
-fwrite($myfile, $txt);
-fclose($myfile);
+$arr_color = (json_decode($baseColor, 1));
+$arr_color = array_count_values($arr_color);
 
 $path_user = 'pattern/guest';
 if ($baseEmail != '') {
@@ -53,56 +48,34 @@ save_base64_image($baseImage, $path_user . '/' . $file_name);
 
 $image = $path_user . '/' . $file_name . '.png';
 
-$html = '';
-$html .= '<div style="">';
+$html = '<div style="">';
+$html .= '<div style="border:1px solid; margin-bottom:20px;"><img src="' . $image . '" alt="' . $baseName . '"/></div>';
 
-$html .= '<div style="
-    padding-top: 170px;
-	height: 500px;
-    background-image: url('. $image .');
-    background-repeat: no-repeat;
-    background-size: contain;">';
-
-$html .= '<div style="
-    background-image: url(style/images/logo.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 120px;">';
-$html .= '<div style="
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 60px;">';
-$html .= '</div>';
-$html .= '</div>';
-$html .= '</div>';
-
-// $html .= '<div><img style="width:100%" src="' . $path_user . '/' . $file_name . '.png"></div><br/><br/>';
-$html .= '<div style="margin-top: -170px;">';
-
-if(!empty($arr_color)){
-	$html .= '<div><b>Color:</b></div>';
+$html .= '<div><img src="https://pplusdesign.com/wp-content/uploads/2021/09/LOGO-PPLUS-icon1.png" alt="PLAN +">';
+$html .= '<div style="margin-top:20px;"><b>- Pattern Name:</b> ' . $baseName . '</div>';
+$html .= '<div><b>- Overall Wall Dimension:</b> ' . number_format($baseWidth) . 'cm x ' . number_format($baseHeight) . 'cm</div>';
+$html .= '<div><b>- Date:</b> ' . date('H:iA d/m/Y') . '</div>';
+if (!empty($arr_color)) {
+	$html .= '<div><b>- Quantity:</b></div>';
 	foreach ($arr_color as $key => $item) {
 		$html .= '<div style="margin-top:10px;">';
 		$html .= '<div style="
 					width: 30px;
 				    height: 20px;
-				    background: '.$item.';
+				    background: ' . $key . ';
 				    display: inline-block;
 				    float:left;
 				"></div>';
-		$html .= '<div>&nbsp;&nbsp;&nbsp;'.$item.'</div>';
+		$html .= '<div>&nbsp;&nbsp;&nbsp;(' . $item . ') ' . $key . '</div>';
 		$html .= '</div>';
 	}
-	$html .= '<div><br></div>';
+	$html .= '<div></div>';
 }
-$html .= '</div>';
-
-$html .= '<div>- Pattern: ' . $baseName . '</div>';
-$html .= '<div>- Size: ' . $baseWidth . 'cm x ' . $baseHeight . 'cm</div>';
-$html .= '<div>- Created at: ' . date('H:iA d/m/Y') . '</div>';
+$html .= '<div><b>- Importance:</b> The actual color of the material may have a slight difference. It should be reviewed before making order</div>';
 $html .= '<div><br></div>';
-$html .= '<div>- Thank you for your design</div>';
-$html .= '<div>- Please let us know if you have inquiry: <span style="color:green">hi@pplusdesign.com</span></div>';
-$html .= '<div>';
+$html .= '<div>Thank you for your design</div>';
+$html .= '<div>Please let us know if you have inquiry: <span style="color:green">hi@pplusdesign.com</span></div>';
+$html .= '</div></div>';
 
 // echo $html;
 // die;
