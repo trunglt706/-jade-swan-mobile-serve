@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  handleCMHeight(350);
-  handleCMWidth(573);
+  // handleCMHeight(350);
+  // handleCMWidth(573);
 
   let colorSeleted = "#FFF";
   $(".colors-container .color-circle-container").on("click", function () {
@@ -158,8 +158,23 @@ $(document).ready(function () {
   $("#CMWidth").on("change", function () {
     handleCMWidth($(this).val());
   });
-
+  let width_pattern_before_change = Number($("#CMWidth").val());
   function handleCMWidth(val) {
+    /*Set value input element drag when zoom*/
+    let width_pattern = width_pattern_before_change;
+    let new_width_pattern = Number(val);
+    /*each*/
+    $("svg rect").each(function (index) {
+      let width_element = Number($(this).attr("width"));
+      let new_width_element = (
+        (new_width_pattern * width_element) /
+        width_pattern
+      ).toFixed(2);
+      $(this).attr("width", new_width_element);
+    });
+    width_pattern_before_change = Number(val);
+    /*----*/
+
     let CMWidth = Number(val);
     let FeetWidth = Math.trunc(CMWidth / 30.48);
     let InchesWidth = (CMWidth / 30.48 - FeetWidth) * 12;
@@ -318,7 +333,22 @@ $(document).ready(function () {
     handleCMHeight($(this).val());
   });
 
+  let height_pattern_before_change = Number($("#CMHeight").val());
   function handleCMHeight(val) {
+    /*Set value input element drag when zoom*/
+    let height_pattern = height_pattern_before_change;
+    let new_height_pattern = Number(val);
+    /*each*/
+    $("svg rect").each(function (index) {
+      let height_element = Number($(this).attr("height"));
+      let new_height_element = (
+        (new_height_pattern * height_element) /
+        height_pattern
+      ).toFixed(2);
+      $(this).attr("height", new_height_element);
+    });
+    height_pattern_before_change = Number(val);
+    /*----*/
     let CMHeight = Number(val);
     let FeetHeight = Math.trunc(CMHeight / 30.48);
     let InchesHeight = (CMHeight / 30.48 - FeetHeight) * 12;
@@ -350,17 +380,17 @@ $(document).ready(function () {
   $(document).on("click", "#handle-submit", function () {
     let get_color;
     let arr_color = [];
-    $( "svg#mainsvg polygon" ).each(function( index ) {
-      get_color = ( $(this).attr('fill') );
-      if(get_color != "#fff" && get_color != "rgb(0, 0, 0)"){
+    $("svg#mainsvg polygon").each(function (index) {
+      get_color = $(this).attr("fill");
+      if (get_color != "#fff" && get_color != "rgb(0, 0, 0)") {
         arr_color.push(get_color);
       }
     });
-    let uniqueArray = arr_color.filter(function(item, pos, self) {
+    let uniqueArray = arr_color.filter(function (item, pos, self) {
       return self.indexOf(item) == pos;
-    })
+    });
     $("input[name=baseColor").val(JSON.stringify(uniqueArray));
-    
+
     convert_img("download");
   });
 
@@ -681,13 +711,8 @@ function handlePositionYElement(value) {
 
 function set_size_svg(x, y) {
   let size_svg = $("#mainsvg").attr("viewBox");
-  // width_svg = size_svg.split(" ")[2];
-  // height_svg = size_svg.split(" ")[3];
-
-  width_svg = $('switch').width();
-  height_svg = $('switch').height();
-
-  console.log(width_svg, height_svg);
+  width_svg = size_svg.split(" ")[2];
+  height_svg = size_svg.split(" ")[3];
 
   width_element_selected = x;
   height_element_selected = y;
