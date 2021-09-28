@@ -45,7 +45,7 @@
                             <div class="label-switch mb-2">
                                 <label class="alt-font"><b>Mẫu pattern</b></label>
                             </div>
-                            <div style="border: 1px solid;">
+                            <div style="">
                                 <?php
                                 $filename = 'include/item/item' . $_GET['id'] . '.php';
                                 include($filename);
@@ -53,7 +53,7 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="col-sm-7">
-                                    <div class="text-danger mt-2">Fill in you wall's dimension</div>
+                                    <div class="text-danger mt-2">Fill in your wall's dimension</div>
                                 </div>
                                 <div class="col-sm-5 div-pdf" style="text-align: right;">
                                     <button class="btn btn-design btn-pdf" id="handle-submit" style="font-size: 13px;">

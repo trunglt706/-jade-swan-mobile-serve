@@ -34,24 +34,24 @@ $email = $_GET['email'] ?? '';
     <div class="col-md-3 col-6">
         <label class="form-label"><b>Width</b> <small>(Cm)</small></label>
         <div class="mb-3">
-            <input type="number" class="form-control" value="1112" min="0" id="CMWidth" style="font-size: 13px;">
+            <input type="number" class="form-control" value="366" min="0" id="CMWidth" style="font-size: 13px;">
         </div>
     </div>
     <div class="col-md-3 col-6">
         <label class="form-label"><b>Height</b> <small>(Cm)</small></label>
         <div class="mb-3">
-            <input type="number" class="form-control" value="698" min="0" id="CMHeight" style="font-size: 13px;">
+            <input type="number" class="form-control" value="244" min="0" id="CMHeight" style="font-size: 13px;">
         </div>
     </div>
     <div class="setting-element hide row" style="width:50%">
         <div class="col-md-6 col-6">
-            <label class="form-label">Width element</label>
+            <label class="form-label">Width element (cm)</label>
             <div class="mb-3">
                 <input type="number" class="form-control" value="0" min="0" id="width-element" style="font-size: 13px;">
             </div>
         </div>
         <div class="col-md-6 col-6">
-            <label class="form-label">Height element</label>
+            <label class="form-label">Height element (cm)</label>
             <div class="mb-3">
                 <input type="number" class="form-control" value="0" min="0" id="height-element" style="font-size: 13px;">
             </div>
@@ -74,8 +74,8 @@ $email = $_GET['email'] ?? '';
 </div>
 <form id="submit-form" action="/process.php" method="POST">
     <input type="hidden" name="baseImage" value="">
-    <input type="hidden" name="baseWidth" value="1112">
-    <input type="hidden" name="baseHeight" value="698">
+    <input type="hidden" name="baseWidth" value="366">
+    <input type="hidden" name="baseHeight" value="244">
     <input type="hidden" name="baseName" value="<?php echo $title; ?>">
     <input type="hidden" name="email" value="<?php echo $email; ?>">
     <input type="hidden" name="baseColor" value="">

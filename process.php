@@ -1,4 +1,6 @@
 <?php
+include('include/help.php');
+
 $baseImage = $_POST['baseImage'];
 $baseWidth = $_POST['baseWidth'];
 $baseHeight = $_POST['baseHeight'];
@@ -66,7 +68,7 @@ if (!empty($arr_color)) {
 				    display: inline-block;
 				    float:left;
 				"></div>';
-		$html .= '<div>&nbsp;&nbsp;&nbsp;(' . $item . ') ' . $key . '</div>';
+		$html .= '<div>&nbsp;&nbsp;&nbsp;(' . $item . ') ' . list_colors($key) . '</div>';
 		$html .= '</div>';
 	}
 	$html .= '<div></div>';

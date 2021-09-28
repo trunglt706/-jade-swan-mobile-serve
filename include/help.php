@@ -41,12 +41,12 @@ function list_colors($code = '')
         "B’dazzled blue" => "rgb(50, 88, 150)",
         "Pacific Blue" => "rgb(28, 175, 199)",
         "Myrtle Green" => "rgb(49, 120, 115)",
-        "Space Cadet" => "rgb( 29, 33, 70)",
+        "Space Cadet" => "rgb(29, 33, 70)",
         "Green Munsell" => "rgb(0, 168, 119)",
         "Pullman Green" => "rgb(59, 51, 28)",
         "Android Green" => "rgb(164, 176, 35)",
         "Malachite Green" => "rgb(101, 242, 138)",
-        "Arctic Lime" => "rgb( 208, 255, 20)",
+        "Arctic Lime" => "rgb(208, 255, 20)",
         "Forest Green" => "rgb(11, 102, 35)",
         "Pakistan Green" => "rgb(0, 102, 0)",
         "Dark Lemon-Lime" => "rgb(118, 186, 27)",
@@ -97,5 +97,5 @@ function list_colors($code = '')
         "Rich grey" => "rgb(31, 32, 34)",
         "Black" => "rgb(0, 0, 0)"
     ];
-    return ($code == '') ? $list : $list[$code];
+    return ($code == '') ? $list : array_search($code, $list);
 }

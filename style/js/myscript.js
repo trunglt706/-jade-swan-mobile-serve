@@ -1,7 +1,6 @@
-$(document).ready(function () {
-  // handleCMHeight(350);
-  // handleCMWidth(573);
+const ty_le = 2.5;
 
+$(document).ready(function () {
   let colorSeleted = "#FFF";
   $(".colors-container .color-circle-container").on("click", function () {
     let style_color = $(this).find("button").css("background-color");
@@ -29,128 +28,6 @@ $(document).ready(function () {
   });
 
   /*WIDTH*/
-  $("#FeetWidth").keyup(function () {
-    handleFeetWidth($(this).val());
-  });
-  $("#FeetWidth").on("change", function () {
-    handleFeetWidth($(this).val());
-  });
-
-  function handleFeetWidth(val) {
-    let FeetWidth = Number(val);
-    let InchesWidth = Number($("#InchesWidth").val());
-    let CMWidth = (FeetWidth * 12 + InchesWidth) * 2.54;
-
-    $("#FeetWidth").val(FeetWidth);
-    $("#InchesWidth").val(InchesWidth);
-    $("#CMWidth").val(CMWidth.toFixed(2));
-
-    let calWidth = FeetWidth * 12 + InchesWidth;
-    let viewBox = $("svg").attr("viewBox");
-    let arrSize = viewBox.split(" ");
-    let joinSize =
-      Number(arrSize[0]) +
-      " " +
-      Number(arrSize[1]) +
-      " " +
-      Number(calWidth) +
-      " " +
-      Number(arrSize[3]);
-    $("svg").attr("viewBox", joinSize);
-    // $("rect").attr("width", Number(calWidth));
-    // $("rect").attr("height", Number(arrSize[3]));
-
-    return false;
-  }
-
-  $("#InchesWidth").keyup(function () {
-    handleInchesWidth($(this).val());
-  });
-  $("#InchesWidth").on("change", function () {
-    handleInchesWidth($(this).val());
-  });
-
-  function handleInchesWidth(val) {
-    if (Number(val) == 13) {
-      let FeetWidth = Number($("#FeetWidth").val()) + 1;
-      let InchesWidth = 0;
-      let CMWidth = (FeetWidth * 12 + InchesWidth) * 2.54;
-
-      $("#FeetWidth").val(FeetWidth);
-      $("#InchesWidth").val(InchesWidth);
-      $("#CMWidth").val(CMWidth.toFixed(2));
-
-      let calWidth = FeetWidth * 12 + InchesWidth;
-      let viewBox = $("svg").attr("viewBox");
-      let arrSize = viewBox.split(" ");
-      let joinSize =
-        Number(arrSize[0]) +
-        " " +
-        Number(arrSize[1]) +
-        " " +
-        Number(calWidth) +
-        " " +
-        Number(arrSize[3]);
-      $("svg").attr("viewBox", joinSize);
-      // $("rect").attr("width", Number(calWidth));
-      // $("rect").attr("height", Number(arrSize[3]));
-
-      return false;
-    }
-    if (Number(val) == -1) {
-      let FeetWidth = Number($("#FeetWidth").val()) - 1;
-      if (FeetWidth < 0) {
-        return false;
-      }
-      let InchesWidth = 0;
-      let CMWidth = (FeetWidth * 12 + InchesWidth) * 2.54;
-
-      $("#FeetWidth").val(FeetWidth);
-      $("#InchesWidth").val(InchesWidth);
-      $("#CMWidth").val(CMWidth.toFixed(2));
-
-      let calWidth = FeetWidth * 12 + InchesWidth;
-      let viewBox = $("svg").attr("viewBox");
-      let arrSize = viewBox.split(" ");
-      let joinSize =
-        Number(arrSize[0]) +
-        " " +
-        Number(arrSize[1]) +
-        " " +
-        Number(calWidth) +
-        " " +
-        Number(arrSize[3]);
-      $("svg").attr("viewBox", joinSize);
-      // $("rect").attr("width", Number(calWidth));
-      // $("rect").attr("height", Number(arrSize[3]));
-
-      return false;
-    }
-    let FeetWidth = Number($("#FeetWidth").val());
-    let InchesWidth = Number(val);
-    let CMWidth = (FeetWidth * 12 + InchesWidth) * 2.54;
-
-    $("#FeetWidth").val(FeetWidth);
-    $("#InchesWidth").val(InchesWidth);
-    $("#CMWidth").val(CMWidth.toFixed(2));
-
-    let calWidth = FeetWidth * 12 + InchesWidth;
-    let viewBox = $("svg").attr("viewBox");
-    let arrSize = viewBox.split(" ");
-    let joinSize =
-      Number(arrSize[0]) +
-      " " +
-      Number(arrSize[1]) +
-      " " +
-      Number(calWidth) +
-      " " +
-      Number(arrSize[3]);
-    $("svg").attr("viewBox", joinSize);
-    // $("rect").attr("width", Number(calWidth));
-    // $("rect").attr("height", Number(arrSize[3]));
-
-    return false;
-  }
 
   $("#CMWidth").keyup(function () {
     handleCMWidth($(this).val());
@@ -158,7 +35,7 @@ $(document).ready(function () {
   $("#CMWidth").on("change", function () {
     handleCMWidth($(this).val());
   });
-  let width_pattern_before_change = Number($("#CMWidth").val());
+  let width_pattern_before_change = Number($("#CMWidth").val()) * ty_le;
   function handleCMWidth(val) {
     /*Set value input element drag when zoom*/
     let width_pattern = width_pattern_before_change;
@@ -176,15 +53,10 @@ $(document).ready(function () {
     /*----*/
 
     let CMWidth = Number(val);
-    let FeetWidth = Math.trunc(CMWidth / 30.48);
-    let InchesWidth = (CMWidth / 30.48 - FeetWidth) * 12;
-
-    $("#FeetWidth").val(FeetWidth);
-    $("#InchesWidth").val(InchesWidth.toFixed(2));
     $("#CMWidth").val(CMWidth);
     $('input[name="baseWidth"]').val(CMWidth);
 
-    let calWidth = FeetWidth * 12 + InchesWidth;
+    let calWidth = CMWidth * 0.3937 * ty_le;
     let viewBox = $("svg").attr("viewBox");
     let arrSize = viewBox.split(" ");
     let joinSize =
@@ -203,129 +75,6 @@ $(document).ready(function () {
   }
 
   /*HEIGHT*/
-  $("#FeetHeight").keyup(function () {
-    handleFeetHeight($(this).val());
-  });
-  $("#FeetHeight").on("change", function () {
-    handleFeetHeight($(this).val());
-  });
-
-  function handleFeetHeight(val) {
-    let FeetHeight = Number(val);
-    let InchesHeight = Number($("#InchesHeight").val());
-    let CMHeight = (FeetHeight * 12 + InchesHeight) * 2.54;
-
-    $("#FeetHeight").val(FeetHeight);
-    $("#InchesHeight").val(InchesHeight);
-    $("#CMHeight").val(CMHeight.toFixed(2));
-
-    let calHeight = FeetHeight * 12 + InchesHeight;
-    let viewBox = $("svg").attr("viewBox");
-    let arrSize = viewBox.split(" ");
-    let joinSize =
-      Number(arrSize[0]) +
-      " " +
-      Number(arrSize[1]) +
-      " " +
-      Number(arrSize[2]) +
-      " " +
-      Number(calHeight);
-    $("svg").attr("viewBox", joinSize);
-    // $("rect").attr("width", Number(arrSize[2]));
-    // $("rect").attr("height", Number(calHeight));
-
-    return false;
-  }
-
-  $("#InchesHeight").keyup(function () {
-    handleInchesHeight($(this).val());
-  });
-  $("#InchesHeight").on("change", function () {
-    handleInchesHeight($(this).val());
-  });
-
-  function handleInchesHeight(val) {
-    if (Number(val) == 13) {
-      let FeetHeight = Number($("#FeetHeight").val()) + 1;
-      let InchesHeight = 0;
-      let CMHeight = (FeetHeight * 12 + InchesHeight) * 2.54;
-
-      $("#FeetHeight").val(FeetHeight);
-      $("#InchesHeight").val(InchesHeight);
-      $("#CMHeight").val(CMHeight.toFixed(2));
-
-      let calHeight = FeetHeight * 12 + InchesHeight;
-      let viewBox = $("svg").attr("viewBox");
-      let arrSize = viewBox.split(" ");
-      let joinSize =
-        Number(arrSize[0]) +
-        " " +
-        Number(arrSize[1]) +
-        " " +
-        Number(arrSize[2]) +
-        " " +
-        Number(calHeight);
-      $("svg").attr("viewBox", joinSize);
-      // $("rect").attr("width", Number(arrSize[2]));
-      // $("rect").attr("height", Number(calHeight));
-
-      return false;
-    }
-    if (Number(val) == -1) {
-      let FeetHeight = Number($("#FeetHeight").val()) - 1;
-      if (FeetHeight < 0) {
-        return false;
-      }
-      let InchesHeight = 0;
-      let CMHeight = (FeetHeight * 12 + InchesHeight) * 2.54;
-
-      $("#FeetHeight").val(FeetHeight);
-      $("#InchesHeight").val(InchesHeight);
-      $("#CMHeight").val(CMHeight.toFixed(2));
-
-      let calHeight = FeetHeight * 12 + InchesHeight;
-      let viewBox = $("svg").attr("viewBox");
-      let arrSize = viewBox.split(" ");
-      let joinSize =
-        Number(arrSize[0]) +
-        " " +
-        Number(arrSize[1]) +
-        " " +
-        Number(arrSize[2]) +
-        " " +
-        Number(calHeight);
-      $("svg").attr("viewBox", joinSize);
-      // $("rect").attr("width", Number(arrSize[2]));
-      // $("rect").attr("height", Number(calHeight));
-
-      return false;
-    }
-    let FeetHeight = Number($("#FeetHeight").val());
-    let InchesHeight = Number(val);
-    let CMHeight = (FeetHeight * 12 + InchesHeight) * 2.54;
-
-    $("#FeetHeight").val(FeetHeight);
-    $("#InchesHeight").val(InchesHeight);
-    $("#CMHeight").val(CMHeight.toFixed(2));
-
-    let calHeight = FeetHeight * 12 + InchesHeight;
-    let viewBox = $("svg").attr("viewBox");
-    let arrSize = viewBox.split(" ");
-    let joinSize =
-      Number(arrSize[0]) +
-      " " +
-      Number(arrSize[1]) +
-      " " +
-      Number(arrSize[2]) +
-      " " +
-      Number(calHeight);
-    $("svg").attr("viewBox", joinSize);
-    // $("rect").attr("width", Number(arrSize[2]));
-    // $("rect").attr("height", Number(calHeight));
-
-    return false;
-  }
-
   $("#CMHeight").keyup(function () {
     handleCMHeight($(this).val());
   });
@@ -333,7 +82,7 @@ $(document).ready(function () {
     handleCMHeight($(this).val());
   });
 
-  let height_pattern_before_change = Number($("#CMHeight").val());
+  let height_pattern_before_change = Number($("#CMHeight").val()) * ty_le;
   function handleCMHeight(val) {
     /*Set value input element drag when zoom*/
     let height_pattern = height_pattern_before_change;
@@ -350,15 +99,11 @@ $(document).ready(function () {
     height_pattern_before_change = Number(val);
     /*----*/
     let CMHeight = Number(val);
-    let FeetHeight = Math.trunc(CMHeight / 30.48);
-    let InchesHeight = (CMHeight / 30.48 - FeetHeight) * 12;
 
-    $("#FeetHeight").val(FeetHeight);
-    $("#InchesHeight").val(InchesHeight.toFixed(2));
     $("#CMHeight").val(CMHeight);
     $('input[name="baseHeight"]').val(CMHeight);
 
-    let calHeight = FeetHeight * 12 + InchesHeight;
+    let calHeight = CMHeight * 0.3937 * ty_le;
     let viewBox = $("svg").attr("viewBox");
     let arrSize = viewBox.split(" ");
     let joinSize =
@@ -603,8 +348,8 @@ $(document).on("click", ".group-1", function () {
 
   id = $(this).data("id");
   $(".setting-element").removeClass("hide");
-  $("#width-element").val(Math.round(width));
-  $("#height-element").val(Math.round(height));
+  $("#width-element").val(Math.round(width / ty_le));
+  $("#height-element").val(Math.round(height / ty_le));
   $("#position-x-element").val(Math.round(x));
   $("#position-y-element").val(Math.round(y));
 });
@@ -623,8 +368,8 @@ $(document).on("click", ".group-2", function () {
 
   id = $(this).data("id");
   $(".setting-element").removeClass("hide");
-  $("#width-element").val(Math.round(width));
-  $("#height-element").val(Math.round(height));
+  $("#width-element").val(Math.round(width / ty_le));
+  $("#height-element").val(Math.round(height / ty_le));
   $("#position-x-element").val(Math.round(x));
   $("#position-y-element").val(Math.round(y));
 });
@@ -643,8 +388,8 @@ $(document).on("click", ".group-3", function () {
 
   id = $(this).data("id");
   $(".setting-element").removeClass("hide");
-  $("#width-element").val(Math.round(width));
-  $("#height-element").val(Math.round(height));
+  $("#width-element").val(Math.round(width / ty_le));
+  $("#height-element").val(Math.round(height / ty_le));
   $("#position-x-element").val(Math.round(x));
   $("#position-y-element").val(Math.round(y));
 });
@@ -663,8 +408,8 @@ $(document).on("click", ".group-4", function () {
 
   id = $(this).data("id");
   $(".setting-element").removeClass("hide");
-  $("#width-element").val(Math.round(width));
-  $("#height-element").val(Math.round(height));
+  $("#width-element").val(Math.round(width / ty_le));
+  $("#height-element").val(Math.round(height / ty_le));
   $("#position-x-element").val(Math.round(x));
   $("#position-y-element").val(Math.round(y));
 });
@@ -676,7 +421,10 @@ $("#width-element").on("change", function () {
   handleWidthElement($(this).val());
 });
 function handleWidthElement(value) {
-  $(".group-" + group + "-item-" + id).attr("width", Math.round(value / 2.54));
+  $(".group-" + group + "-item-" + id).attr(
+    "width",
+    Math.round((value * ty_le) / 2.54)
+  );
 }
 
 $("#height-element").keyup(function () {
@@ -686,7 +434,10 @@ $("#height-element").on("change", function () {
   handleHeightElement($(this).val());
 });
 function handleHeightElement(value) {
-  $(".group-" + group + "-item-" + id).attr("height", Math.round(value / 2.54));
+  $(".group-" + group + "-item-" + id).attr(
+    "height",
+    Math.round((value * ty_le) / 2.54)
+  );
 }
 
 $("#position-x-element").keyup(function () {
@@ -696,7 +447,10 @@ $("#position-x-element").on("change", function () {
   handlePositionXElement($(this).val());
 });
 function handlePositionXElement(value) {
-  $(".group-" + group + "-item-" + id).attr("x", Math.round(value / 2.54));
+  $(".group-" + group + "-item-" + id).attr(
+    "x",
+    Math.round((value * ty_le) / 2.54)
+  );
 }
 
 $("#position-y-element").keyup(function () {
@@ -706,7 +460,10 @@ $("#position-y-element").on("change", function () {
   handlePositionYElement($(this).val());
 });
 function handlePositionYElement(value) {
-  $(".group-" + group + "-item-" + id).attr("y", Math.round(value / 2.54));
+  $(".group-" + group + "-item-" + id).attr(
+    "y",
+    Math.round((value * ty_le) / 2.54)
+  );
 }
 
 function set_size_svg(x, y) {

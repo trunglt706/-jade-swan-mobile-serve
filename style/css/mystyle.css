@@ -457,6 +457,7 @@ label[data-v-1a96ae98] {
 }
 #pdf svg {
   max-width: 100% !important;
+  border: 1px solid;
 }
 .btn-design {
   background: #00bcb3;

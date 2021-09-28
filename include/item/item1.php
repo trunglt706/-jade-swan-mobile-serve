@@ -1,4 +1,6 @@
-<svg data-v-55219509="" data-v-1a96ae98="" onload="makeDraggable(evt)" preserveAspectRatio="xMinYMin meet" viewBox="0 0 438.483 275.59055118110234" class="design-svg" id="mainsvg" style='
+<!-- 1 cm = 0.3937 inch
+ty le: 2.5 -->
+<svg data-v-55219509="" data-v-1a96ae98="" onload="makeDraggable(evt)" preserveAspectRatio="xMinYMin meet" viewBox="0 0 360.2355 240.157" class="design-svg" id="mainsvg" style='
       display: block;
      -webkit-user-select: none;
      -moz-user-select: none;
@@ -1725,10 +1727,10 @@
          769.875,18.068 808.096,18.068 809.202,16.161 790.085,-16.947      " />
       </g>
    </switch>
-   <?php for ($i = 1; $i < 5; $i++) { ?>
-      <rect x="<?= $i * 10 ?>" y="10" width="37.5" height="86.5" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-1 group-1-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
-      <rect x="<?= $i * 10 ?>" y="10" width="20" height="40" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-2 group-2-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
-      <rect x="<?= $i * 10 ?>" y="10" width="20" height="20" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-4 group-4-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
-      <rect x="<?= $i * 10 ?>" y="10" width="2.8" height="4.8" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-3 group-3-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
+   <?php for ($i = 0; $i < 5; $i++) { ?>
+      <rect x="<?= $i * 10 ?>" y="28.54325" width="93.50375" height="211.61375" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-1 group-1-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
+      <rect x="<?= ($i + 1) * 10 + 105.31475 ?>" y="28.54325" width="29.5275" height="59.055" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-2 group-2-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
+      <rect x="<?= ($i + 1) * 10 + 139.7635 ?>" y="28.54325" width="49.2125" height="49.2125" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-4 group-4-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
+      <rect x="<?= ($i + 1) * 10 + 93.50375 ?>" y="28.54325" width="6.88975" height="11.811" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-3 group-3-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
    <?php } ?>
 </svg>

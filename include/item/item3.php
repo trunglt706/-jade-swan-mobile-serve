@@ -2413,7 +2413,7 @@
       </switch>
 
       <?php for ($i = 1; $i < 5; $i++) { ?>
-            <rect x="<?= $i * 10 ?>" y="10" width="37.5" height="86.5" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-1 group-1-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
+            <rect x="<?= $i * 10 ?>" y="10" width="<?= 37.5 * 2.5 ?>" height="<?= 84.5 * 2.5 ?>" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-1 group-1-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
             <rect x="<?= $i * 10 ?>" y="10" width="20" height="40" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-2 group-2-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
             <rect x="<?= $i * 10 ?>" y="10" width="20" height="20" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-4 group-4-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
             <rect x="<?= $i * 10 ?>" y="10" width="2.8" height="4.8" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-3 group-3-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
