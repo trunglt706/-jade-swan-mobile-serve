@@ -54,6 +54,7 @@ $(document).ready(function () {
       Number(arrSize[3]);
     $("svg").attr("viewBox", joinSize);
     $("rect.design-border").attr("width", Number(calWidth));
+    $("rect.design-border").attr("height", Number(arrSize[3]));
 
     return false;
   }
@@ -85,6 +86,7 @@ $(document).ready(function () {
       Number(calHeight);
     $("svg").attr("viewBox", joinSize);
     $("rect.design-border").attr("width", Number(arrSize[2]));
+    $("rect.design-border").attr("height", Number(calHeight));
 
     return false;
   }
