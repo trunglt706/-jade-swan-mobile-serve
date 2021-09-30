@@ -35,23 +35,8 @@ $(document).ready(function () {
   $("#CMWidth").on("change", function () {
     handleCMWidth($(this).val());
   });
-  let width_pattern_before_change = Number($("#CMWidth").val()) * ty_le;
-  function handleCMWidth(val) {
-    /*Set value input element drag when zoom*/
-    let width_pattern = width_pattern_before_change;
-    let new_width_pattern = Number(val);
-    /*each*/
-    $("svg rect").each(function (index) {
-      let width_element = Number($(this).attr("width"));
-      let new_width_element = (
-        (new_width_pattern * width_element) /
-        width_pattern
-      ).toFixed(2);
-      $(this).attr("width", new_width_element);
-    });
-    width_pattern_before_change = Number(val);
-    /*----*/
 
+  function handleCMWidth(val) {
     let CMWidth = Number(val);
     $("#CMWidth").val(CMWidth);
     $('input[name="baseWidth"]').val(CMWidth);
@@ -68,8 +53,7 @@ $(document).ready(function () {
       " " +
       Number(arrSize[3]);
     $("svg").attr("viewBox", joinSize);
-    // $("rect").attr("width", Number(calWidth));
-    // $("rect").attr("height", Number(arrSize[3]));
+    $("rect.design-border").attr("width", Number(calWidth));
 
     return false;
   }
@@ -82,24 +66,9 @@ $(document).ready(function () {
     handleCMHeight($(this).val());
   });
 
-  let height_pattern_before_change = Number($("#CMHeight").val()) * ty_le;
   function handleCMHeight(val) {
-    /*Set value input element drag when zoom*/
-    let height_pattern = height_pattern_before_change;
-    let new_height_pattern = Number(val);
-    /*each*/
-    $("svg rect").each(function (index) {
-      let height_element = Number($(this).attr("height"));
-      let new_height_element = (
-        (new_height_pattern * height_element) /
-        height_pattern
-      ).toFixed(2);
-      $(this).attr("height", new_height_element);
-    });
-    height_pattern_before_change = Number(val);
     /*----*/
     let CMHeight = Number(val);
-
     $("#CMHeight").val(CMHeight);
     $('input[name="baseHeight"]').val(CMHeight);
 
@@ -115,8 +84,7 @@ $(document).ready(function () {
       " " +
       Number(calHeight);
     $("svg").attr("viewBox", joinSize);
-    // $("rect").not(".draggable").attr("width", Number(arrSize[2]));
-    // $("rect").not(".draggable").attr("height", Number(calHeight));
+    $("rect.design-border").attr("width", Number(arrSize[2]));
 
     return false;
   }
@@ -131,9 +99,18 @@ $(document).ready(function () {
         arr_color.push(get_color);
       }
     });
-    // let uniqueArray = arr_color.filter(function (item, pos, self) {
-    //   return self.indexOf(item) == pos;
-    // });
+    $("svg#mainsvg path").each(function (index) {
+      get_color = $(this).attr("fill");
+      if (get_color != "#fff" && get_color != "rgb(0, 0, 0)") {
+        arr_color.push(get_color);
+      }
+    });
+    $("svg#mainsvg polyline").each(function (index) {
+      get_color = $(this).attr("fill");
+      if (get_color != "#fff" && get_color != "rgb(0, 0, 0)") {
+        arr_color.push(get_color);
+      }
+    });
     $("input[name=baseColor").val(JSON.stringify(arr_color));
 
     convert_img("download");
@@ -163,6 +140,10 @@ $(document).ready(function () {
 
   $(document).on("click", "#handle-save", function () {
     convert_img("save");
+  });
+
+  $(document).on("click", "#handle-share", function () {
+    convert_img("share");
   });
 });
 

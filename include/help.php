@@ -1,4 +1,5 @@
 <?php
+const URL = 'https://pplusdesign.com/';
 function list_colors($code = '')
 {
     $list = [

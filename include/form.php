@@ -88,6 +88,9 @@ $email = $_GET['email'] ?? '';
     <button class="btn-design btn-fill tool-mobile" onclick="$('.handleFill').trigger('click');">
         Fill
     </button>
+    <button class="btn-design btn-share tool-mobile" id="handle-share">
+        Share
+    </button>
 </div>
 
 <div class="list-btn">

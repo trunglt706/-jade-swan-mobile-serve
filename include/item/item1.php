@@ -1727,6 +1727,8 @@ ty le: 2.5 -->
          769.875,18.068 808.096,18.068 809.202,16.161 790.085,-16.947      " />
       </g>
    </switch>
+
+   <rect data-v-55219509="" width="360.2355" height="240.157" class="design-border"></rect>
    <?php for ($i = 0; $i < 5; $i++) { ?>
       <rect x="<?= $i * 10 ?>" y="28.54325" width="93.50375" height="211.61375" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-1 group-1-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
       <rect x="<?= ($i + 1) * 10 + 105.31475 ?>" y="28.54325" width="29.5275" height="59.055" style="fill:#fff;stroke: #000;stroke-width: 0.2;display: none" class="draggable group-2 group-2-item-<?= $i ?> hide" data-id='<?= $i ?>'></rect>
